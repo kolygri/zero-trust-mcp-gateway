@@ -8,7 +8,9 @@ This repository currently contains the research library; the gateway implementat
 
 Open the [HTML reading library](docs/index.html) in a browser. It includes one page per resource, large adjustable text, a single-column layout, dark mode, and previous/next navigation. No build tools, account or JavaScript are required to read the pages.
 
-The supplied research notes are preserved as written. Where redistribution permission is established and source text is available, the reader also includes the original text with attribution. PDF extractions retain page boundaries and may not faithfully reproduce figures, tables or equations. Other pages contain the supplied notes and direct links to the full original; they are labelled accordingly. GitHub's file view shows HTML source rather than rendering the reader.
+The supplied research notes are preserved as written; the added Policies on Paths entry is a source-based summary. Where redistribution permission is established and source text is available, the reader also includes the original text with attribution. Each paper has an original-PDF viewer with page selection, zoom and panning, so diagrams, formulas and tables keep their published layout. MathML formulas in HTML copies retain mathematical structure and scroll independently when wider than the screen. GitHub's file view shows HTML source rather than rendering the reader.
+
+The original PDFs for SAMOS, Task Shield, Governance by Construction, and Policies on Paths are included under CC BY 4.0 and work offline, including through `file://` pages. AgentTrust loads its PDF directly from arXiv. MDPI and IEEE may refuse in-page loading or require publisher access; their reader pages always provide links to the original paper and PDF. The viewer shows an explicit error if a remote source cannot load. JavaScript is required for the in-page PDF viewer; the original PDF links and reflowed text remain available without it.
 
 To read on an iPhone over the same trusted Wi-Fi network, start a local server from the repository folder:
 
@@ -20,7 +22,7 @@ In iPhone Safari, open `http://<your-Mac-local-IP>:8000`. The files in `docs` ar
 
 ## 1. The research most relevant to the gateway
 
-Descriptions and relevance ratings below are the supplied research notes. Ratings are editorial judgements; reported results belong to each paper's evaluation, not this project.
+Descriptions below preserve the supplied research notes, except the source-based summary of the newly added Policies on Paths paper. Relevance ratings are editorial judgements; reported results belong to each paper's evaluation, not this project.
 
 ### 1. [SAMOS — Securing MCP-based Agent Workflows](https://research.ibm.com/publications/securing-mcp-based-agent-workflows)
 
@@ -82,6 +84,16 @@ Combines tool identity verification, capability-based authorization, output filt
 
 **Relevance:** Close · [iPhone reading page](docs/resources/zt-mcp-research.html)
 
+### 7. [Runtime Governance for AI Agents: Policies on Paths](https://arxiv.org/abs/2603.16586)
+
+arXiv preprint · March 2026
+
+Formalizes runtime governance as a policy function over agent identity, the partial execution path, a proposed next action and organizational state. Explains why path-dependent rules require runtime checks, and discusses deployment designs and a reference implementation.
+
+**Focus:** Path-dependent policies and per-action intervention across an execution history.
+
+**Relevance:** Very close · [iPhone reading page](docs/resources/policies-on-paths.html)
+
 ### Working research hypothesis
 
 These works collectively establish that your idea is technically credible. They also suggest that the novelty probably won't lie in introducing a gateway or adding policy checks. It will need to lie in how the gateway coordinates corrective interventions throughout execution.
@@ -104,23 +116,24 @@ Source links checked on 27 October 2026. The descriptions above preserve the sup
 
 | Resource | Local reading content | Source / licence |
 | --- | --- | --- |
-| SAMOS — Securing MCP-based Agent Workflows | PDF text | [Source version](https://www.ntousakis.com/pacmi-25.pdf) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| SAMOS — Securing MCP-based Agent Workflows | PDF text + original pages | [Source version](https://www.ntousakis.com/pacmi-25.pdf) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | Governance by Construction for Generalist Agents | Full preprint text | [Source version](https://arxiv.org/html/2605.20874v1) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| AgentTrust — Runtime Safety Evaluation and Interception | Supplied notes + original link | The linked arXiv version uses arXiv's non-exclusive distribution licence, which does not grant this repository permission to redistribute the complete paper. Use the original HTML for the full text. |
-| Runtime Policy Enforcement for MCP-Based LLM Agents | Supplied notes + original link | The publisher blocked automated full-text retrieval during preparation, so no complete article is included locally. Read the original for the evaluation setup and limitations. |
-| The Task Shield — Enforcing Task Alignment | PDF text | [Source version](https://aclanthology.org/2025.acl-long.1435.pdf) · [CC BY 4.0](https://aclanthology.org/faq/copyright/) |
-| ZT-MCP — A Zero-Trust Security Architecture | Supplied notes + original link | A redistribution licence for the complete IEEE paper has not been established. The reference implementation is listed separately. |
+| AgentTrust — Runtime Safety Evaluation and Interception | Supplied notes + live original-PDF viewer | The linked arXiv version uses arXiv's non-exclusive distribution licence, which does not grant this repository permission to redistribute the complete paper. Use the original HTML for the full text. |
+| Runtime Policy Enforcement for MCP-Based LLM Agents | Supplied notes + live original-PDF viewer | The publisher blocked automated full-text retrieval during preparation, so no complete article is included locally. Read the original for the evaluation setup and limitations. |
+| The Task Shield — Enforcing Task Alignment | PDF text + original pages | [Source version](https://aclanthology.org/2025.acl-long.1435.pdf) · [CC BY 4.0](https://aclanthology.org/faq/copyright/) |
+| ZT-MCP — A Zero-Trust Security Architecture | Supplied notes + live original-PDF viewer | A redistribution licence for the complete IEEE paper has not been established. The reference implementation is listed separately. |
+| Runtime Governance for AI Agents: Policies on Paths | Full preprint with MathML | [Source version](https://arxiv.org/html/2603.16586v1) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | Agentgateway | Full README | [Source version](https://github.com/agentgateway/agentgateway/blob/main/README.md) · [Apache-2.0](docs/licenses/agentgateway.txt) |
 | Microsoft Agent Governance Toolkit | Full README | [Source version](https://github.com/microsoft/agent-governance-toolkit/blob/main/README.md) · [MIT](docs/licenses/microsoft-agent-governance-toolkit.txt) |
 | ZT-MCP | Full README | [Source version](https://github.com/sarmishra/ZT-MCP-Project/blob/main/README.md) · [MIT](docs/licenses/zt-mcp-implementation.txt) |
 | ClawGuard | Supplied notes + original link | The upstream README advertises MIT, but its linked LICENSE file returned 404 during preparation. The complete README is linked at its source pending clarification of the licence notice. |
 | Uber MCP Gateway | Supplied notes + original link | A redistribution licence for the complete article has not been established. Read the original article for its architecture and diagrams. |
 
-Third-party source copies retain their upstream licences; inclusion does not imply endorsement. Original project READMEs are reading material, and their commands are not automatically executed.
+Third-party source copies retain their upstream licences; inclusion does not imply endorsement. Original project READMEs are reading material, and their commands are not automatically executed. The PDF viewer uses a bundled copy of Mozilla PDF.js; its version, build instructions, and licence are in `docs/assets/vendor/pdfjs/README.md`.
 
 ## Updating the library
 
-Edit `docs/resources.json` for the supplied notes and metadata. Licensed reading snapshots live in `docs/sources/`, with applicable licence notices in `docs/licenses/`. Rebuild the README and reading pages using Python's standard library:
+Edit `docs/resources.json` for the supplied notes and metadata. Licensed reading snapshots live in `docs/sources/`, with applicable licence notices in `docs/licenses/`. Unmodified licensed PDFs live in `docs/assets/papers/`; the build also creates classic-script data copies so the viewer works through `file://` without cross-origin fetches or workers. Rebuild the README and reading pages using Python's standard library:
 
 ```sh
 python3 scripts/build_reading.py

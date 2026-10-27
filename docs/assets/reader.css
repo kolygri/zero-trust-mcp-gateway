@@ -85,6 +85,31 @@ dd { margin: 7px 0 0; }
 .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; border-top: 1px solid var(--line); padding-top: 28px; margin-top: 48px; }
 .article-nav a { display: flex; flex-direction: column; gap: 8px; padding-block: 10px; font-size: 15px; }
 .related { font-size: 15px; }
+.viewer-jump { display: inline-flex; align-items: center; min-height: 44px; margin-top: 12px; font-size: 14px; }
+.paper-viewer { margin: 16px 0 44px; padding-block: 24px; border-block: 1px solid var(--line); }
+.paper-viewer h2 { font-size: 32px; }
+.paper-viewer > p:not(.caption) { font-size: 16px; }
+.pdf-links { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; margin-block: 16px; }
+.pdf-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.pdf-load, .pdf-toolbar button, .pdf-toolbar select { min-height: 44px; min-width: 44px; border: 1px solid var(--line); border-radius: 4px; padding: 8px 12px; background: var(--paper); color: var(--ink); font: 15px/1.4 -apple-system, sans-serif; cursor: pointer; }
+.pdf-toolbar select { font-size: 16px; padding-inline: 6px; }
+.pdf-toolbar button:disabled, .pdf-load:disabled { opacity: .4; cursor: default; }
+.pdf-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; margin-block: 16px; }
+.pdf-page-controls, .pdf-zoom-controls { display: flex; gap: 6px; align-items: center; font-size: 14px; }
+.pdf-page-controls label { display: flex; align-items: center; gap: 6px; }
+.pdf-zoom { min-width: 44px; text-align: center; font-size: 13px; font-variant-numeric: tabular-nums; }
+.pdf-stage { max-width: 100%; max-height: 75svh; min-height: 100px; overflow: auto; border: 1px solid var(--line); background: #eee; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+.pdf-stage canvas { display: block; max-width: none; background: white; }
+.pdf-status { min-height: 2.5em; margin-block: 12px; }
+.math-scroll { max-width: 100%; overflow: auto; padding-block: 12px; margin-block: 16px; -webkit-overflow-scrolling: touch; }
+.source-copy math { font-family: math; overflow-wrap: normal; }
+.source-copy math[display="block"] { display: block; max-width: none; overflow: visible; padding: 0; }
+.source-copy math annotation { display: none; }
+.source-copy .ltx_eqn_table { width: max-content; min-width: 0; max-width: none; font-size: 1em; margin-inline: auto; }
+.source-copy .ltx_eqn_table td { border: 0; padding: 4px 6px; white-space: nowrap; vertical-align: middle; }
+.source-copy .ltx_align_center { text-align: center; }
+.source-copy .ltx_align_right { text-align: right; }
+.source-copy .ltx_tag_item { display: none; }
 @media (max-width: 600px) {
   .brand-detail { display: none; }
   .site-header { min-height: 74px; padding-block: 12px; }
@@ -105,7 +130,7 @@ dd { margin: 7px 0 0; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print {
   :root { --paper: white; --ink: black; --muted: #444; --line: #bbb; --accent: #222; --wash: #f5f5f5; }
-  .reading-controls, .article-nav, .back-link { display: none !important; }
+  .reading-controls, .article-nav, .back-link, .pdf-toolbar, .pdf-load { display: none !important; }
   main { width: 100%; }
   .source-copy pre { white-space: pre-wrap; }
 }

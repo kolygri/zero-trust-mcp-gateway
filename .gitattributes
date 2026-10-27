@@ -1,0 +1,5 @@
+docs/assets/papers/*.pdf binary
+docs/assets/papers/*.pdf.js linguist-generated
+docs/assets/vendor/** linguist-vendored
+docs/index.html linguist-generated
+docs/resources/*.html linguist-generated

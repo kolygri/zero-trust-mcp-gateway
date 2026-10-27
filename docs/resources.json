@@ -15,8 +15,13 @@
       "attribution": "Grigoris Ntousakis, Julian James Stephen, Michael V. Le, Sai Sree Laya Chukkapalli, Teryl Taylor, Ian M. Molloy, and Frederico Araujo. © 2025 the authors. PACMI ’25, DOI: 10.1145/3766882.3767177.",
       "license": "CC BY 4.0",
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "format": "PDF text",
-      "changes": "Text extracted from the author-hosted PDF and reflowed for a small screen. Page boundaries are retained. Figures, mathematical notation and tables should be checked in the original PDF; extraction is not a facsimile."
+      "format": "PDF text + original pages",
+      "changes": "Reflowed text is provided for reading. Diagrams, formulas and tables are preserved in the original PDF viewer above; use its zoom controls for small labels and mathematical notation. The PDF is an unmodified licensed local copy.",
+      "pdf": {
+        "url": "https://www.ntousakis.com/pacmi-25.pdf",
+        "local": "samos.pdf",
+        "start_page": 2
+      }
     },
     {
       "slug": "governance-by-construction",
@@ -32,7 +37,12 @@
       "license": "CC BY 4.0",
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "format": "Full preprint text",
-      "changes": "The author-posted arXiv v1 HTML is reflowed; the publisher version may differ. Original article wording is retained. Website navigation and scripts are removed; source links and figure references are preserved."
+      "changes": "The author-posted arXiv v1 HTML is reflowed, with MathML and source links retained; the publisher version may differ. Original PDF pages preserve tables and notation in the zoomable viewer.",
+      "pdf": {
+        "url": "https://arxiv.org/pdf/2605.20874v1",
+        "local": "governance-by-construction.pdf",
+        "start_page": 3
+      }
     },
     {
       "slug": "agenttrust",
@@ -44,7 +54,11 @@
       "focus": "Correcting dangerous tool calls, not merely blocking them.",
       "relevance": "Very close",
       "availability": "The supplied notes are reproduced below. The linked arXiv version uses arXiv's non-exclusive distribution licence, which does not grant this repository permission to redistribute the complete paper. Use the original HTML for the full text.",
-      "full_text_url": "https://arxiv.org/html/2605.04785v1"
+      "full_text_url": "https://arxiv.org/html/2605.04785v1",
+      "pdf": {
+        "url": "https://arxiv.org/pdf/2605.04785v1",
+        "start_page": 7
+      }
     },
     {
       "slug": "runtime-policy-enforcement",
@@ -55,7 +69,12 @@
       "description": "Implements deterministic enforcement at the tool-call boundary with cross-step sensitivity labels and tamper-evident audit records. The reported attack success rate fell from 40% to 5% in a controlled evaluation.",
       "focus": "Deterministic enforcement independent of agent reasoning.",
       "relevance": "Close",
-      "availability": "The supplied notes are reproduced below. The publisher blocked automated full-text retrieval during preparation, so no complete article is included locally. Read the original for the evaluation setup and limitations."
+      "availability": "The supplied notes are reproduced below. The publisher blocked automated full-text retrieval during preparation, so no complete article is included locally. Read the original for the evaluation setup and limitations.",
+      "pdf": {
+        "url": "https://www.mdpi.com/2079-9292/15/13/2829/pdf",
+        "start_page": 1,
+        "access_note": "The publisher blocked automated retrieval. If in-page loading is refused, open the original paper in Safari."
+      }
     },
     {
       "slug": "task-shield",
@@ -70,8 +89,13 @@
       "attribution": "Feiran Jia, Tong Wu, Xin Qin, and Anna Squicciarini. © 2025 Association for Computational Linguistics. Proceedings of ACL 2025, pages 29680–29697. DOI: 10.18653/v1/2025.acl-long.1435.",
       "license": "CC BY 4.0",
       "license_url": "https://aclanthology.org/faq/copyright/",
-      "format": "PDF text",
-      "changes": "Text extracted from the ACL publication and reflowed for a small screen. Page boundaries are retained. Figures, mathematical notation and tables should be checked in the original PDF; extraction is not a facsimile."
+      "format": "PDF text + original pages",
+      "changes": "Reflowed text is provided for reading. Diagrams, formulas and tables are preserved in the original PDF viewer above; use its zoom controls for small labels and mathematical notation. The PDF is an unmodified licensed local copy.",
+      "pdf": {
+        "url": "https://aclanthology.org/2025.acl-long.1435.pdf",
+        "local": "task-shield.pdf",
+        "start_page": 2
+      }
     },
     {
       "slug": "zt-mcp-research",
@@ -83,7 +107,34 @@
       "focus": "Protocol-level trust boundaries and enforcement.",
       "relevance": "Close",
       "availability": "The supplied notes are reproduced below. A redistribution licence for the complete IEEE paper has not been established. The reference implementation is listed separately.",
-      "related": "zt-mcp-implementation"
+      "related": "zt-mcp-implementation",
+      "pdf": {
+        "url": "https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&arnumber=11715596",
+        "start_page": 1,
+        "access_note": "IEEE may require publisher access and may block in-page loading. The original paper link opens the publisher page."
+      }
+    },
+    {
+      "slug": "policies-on-paths",
+      "kind": "Research",
+      "title": "Runtime Governance for AI Agents: Policies on Paths",
+      "publisher": "arXiv preprint · March 2026",
+      "url": "https://arxiv.org/abs/2603.16586",
+      "description": "Formalizes runtime governance as a policy function over agent identity, the partial execution path, a proposed next action and organizational state. Explains why path-dependent rules require runtime checks, and discusses deployment designs and a reference implementation.",
+      "focus": "Path-dependent policies and per-action intervention across an execution history.",
+      "relevance": "Very close",
+      "notes_caption": "Summary prepared for this library from the linked preprint.",
+      "source_url": "https://arxiv.org/html/2603.16586v1",
+      "attribution": "Maurits Kaptein, Vassilis-Javed Khan, and Andriy Podstavnychy. © 2026 the authors. Runtime Governance for AI Agents: Policies on Paths, arXiv:2603.16586v1, submitted 17 March 2026.",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "format": "Full preprint with MathML",
+      "changes": "Original arXiv v1 article wording and MathML formulas retained. Publisher navigation and active content are removed. Equations and tables scroll independently on small screens; original PDF pages are available in the zoomable viewer.",
+      "pdf": {
+        "url": "https://arxiv.org/pdf/2603.16586v1",
+        "local": "policies-on-paths.pdf",
+        "start_page": 8
+      }
     },
     {
       "slug": "agentgateway",

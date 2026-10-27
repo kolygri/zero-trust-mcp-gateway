@@ -48,5 +48,55 @@
     "source_format": "PDF",
     "pages": 18,
     "conversion": "All text blocks in PDF content order; wrapped lines rejoined; soft hyphens and line-end hyphenation removed; figures are in original PDF"
+  },
+  {
+    "slug": "samos",
+    "source_url": "https://www.ntousakis.com/pacmi-25.pdf",
+    "source_sha256": "922b6e436175bda6b8d025599f239de5162c9839ff75e4c7585f31d5f6cb7297",
+    "captured_on": "2026-10-27",
+    "source_format": "Original PDF",
+    "conversion": "No PDF modification; original pages rendered in browser using PDF.js."
+  },
+  {
+    "slug": "governance-by-construction",
+    "source_url": "https://arxiv.org/pdf/2605.20874v1",
+    "source_sha256": "7882a204dc7885ceba64302c136fa5bb55bdc7286d9e0aa558879f3334f0b117",
+    "captured_on": "2026-10-27",
+    "source_format": "Original PDF",
+    "conversion": "No PDF modification; original pages rendered in browser using PDF.js."
+  },
+  {
+    "slug": "task-shield",
+    "source_url": "https://aclanthology.org/2025.acl-long.1435.pdf",
+    "source_sha256": "057ff02152c0bb61892b08abdc80f7af22416c03819e526878091ee87d3bf1e6",
+    "captured_on": "2026-10-27",
+    "source_format": "Original PDF",
+    "conversion": "No PDF modification; original pages rendered in browser using PDF.js."
+  },
+  {
+    "slug": "policies-on-paths",
+    "source_url": "https://arxiv.org/pdf/2603.16586v1",
+    "source_sha256": "abf6e62a9db7d16024ea02150a2d8432cf7ac66881db8ebe89ea0bd93bb234c6",
+    "captured_on": "2026-10-27",
+    "source_format": "Original PDF",
+    "conversion": "No PDF modification; original pages rendered in browser using PDF.js."
+  },
+  {
+    "slug": "policies-on-paths",
+    "source_url": "https://arxiv.org/html/2603.16586v1",
+    "source_sha256": "e194938486e880b9eb0585c85bf5ea26eb031bd1904bb78c82713cec52f8d8fd",
+    "captured_on": "2026-10-27",
+    "source_format": "HTML with MathML",
+    "math_count": 195,
+    "conversion": "Article subtree sanitised with complete MathML retained; source text equality verified ignoring whitespace; equations and tables receive scroll containers."
+  },
+  {
+    "slug": "governance-by-construction",
+    "source_url": "https://arxiv.org/html/2605.20874v1",
+    "source_sha256": "f158283343896c0e6be6132ac3c8a515c9ff4863a3c239a37f03ef2f0c1404c5",
+    "captured_on": "2026-10-27",
+    "source_format": "HTML with MathML",
+    "math_count": 43,
+    "conversion": "Article subtree sanitised with complete MathML retained; source text equality verified ignoring whitespace; equations and tables receive scroll containers."
   }
 ]
