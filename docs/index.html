@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f8f6f0">
+  <title>Research library · Zero Trust MCP Gateway</title>
+  <link rel="stylesheet" href="assets/reader.css">
+  <script src="assets/reader.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">↗</span> ZERO TRUST <span class="brand-detail">/ RESEARCH LIBRARY</span></a>
+    <div class="reading-controls" role="group" aria-label="Text size" hidden>
+      <button type="button" data-size="-1" aria-label="Decrease text size">A−</button>
+      <button type="button" data-size="1" aria-label="Increase text size">A+</button>
+    </div>
+  </header>
+  <main id="main">
+      <section class="hero">
+        <p class="eyebrow">FIELD NOTES / 001</p>
+        <h1>Trust is a boundary.<br><em>Enforce it.</em></h1>
+        <p class="lede">Research and practical implementations for a zero-trust MCP gateway that can intervene throughout agent execution.</p>
+        <div class="collection-meta"><span>06 research papers</span><span>05 implementations</span></div>
+        <nav class="jump-links" aria-label="Browse collection"><a href="#research">The research ↓</a><a href="#implementation">In practice ↓</a></nav>
+      </section>
+      <aside class="reader-note"><strong>A reading copy, with provenance.</strong>
+        <p>Your supplied notes appear unchanged. 6 resources also include licensed source text, with the source version and any conversion limits on each page. Other pages link to the original in full. Linked figures require an internet connection.</p>
+      </aside>
+      <section id="research" class="collection" aria-labelledby="research-heading">
+          <div class="section-heading"><h2 id="research-heading">The research</h2><p>Six perspectives on controlling agent execution.</p></div>
+          <ol class="resource-list"><li class="resource-card">
+      <span class="resource-number">01</span>
+      <div><p class="eyebrow">IBM Research · SOSP 2025 workshop</p>
+      <h3><a href="resources/samos.html">SAMOS — Securing MCP-based Agent Workflows</a></h3>
+      <p>Cross-tool information flow and session-aware enforcement.</p><span class="tag">PDF text</span></div>
+      <span class="card-arrow" aria-hidden="true">↗</span>
+    </li><li class="resource-card">
+      <span class="resource-number">02</span>
+      <div><p class="eyebrow">ACM · 2026</p>
+      <h3><a href="resources/governance-by-construction.html">Governance by Construction for Generalist Agents</a></h3>
+      <p>Runtime intervention across the agent lifecycle.</p><span class="tag">Full preprint text</span></div>
+      <span class="card-arrow" aria-hidden="true">↗</span>
+    </li><li class="resource-card">
+      <span class="resource-number">03</span>
+      <div><p class="eyebrow">Research preprint · May 2026</p>
+      <h3><a href="resources/agenttrust.html">AgentTrust — Runtime Safety Evaluation and Interception</a></h3>
+      <p>Correcting dangerous tool calls, not merely blocking them.</p><span class="tag">Notes + original</span></div>
+      <span class="card-arrow" aria-hidden="true">↗</span>
+    </li><li class="resource-card">
+      <span class="resource-number">04</span>
+      <div><p class="eyebrow">Electronics · June 2026</p>
+      <h3><a href="resources/runtime-policy-enforcement.html">Runtime Policy Enforcement for MCP-Based LLM Agents</a></h3>
+      <p>Deterministic enforcement independent of agent reasoning.</p><span class="tag">Notes + original</span></div>
+      <span class="card-arrow" aria-hidden="true">↗</span>
+    </li><li class="resource-card">
+      <span class="resource-number">05</span>
+      <div><p class="eyebrow">ACL 2025</p>
+      <h3><a href="resources/task-shield.html">The Task Shield — Enforcing Task Alignment</a></h3>
+      <p>Aligning execution with original user intent.</p><span class="tag">PDF text</span></div>
+      <span class="card-arrow" aria-hidden="true">↗</span>
+    </li><li class="resource-card">
+      <span class="resource-number">06</span>
+      <div><p class="eyebrow">IEEE COINS · September 2026</p>
+      <h3><a href="resources/zt-mcp-research.html">ZT-MCP — A Zero-Trust Security Architecture</a></h3>
+      <p>Protocol-level trust boundaries and enforcement.</p><span class="tag">Notes + original</span></div>
+      <span class="card-arrow" aria-hidden="true">↗</span>
+    </li></ol></section><section id="implementation" class="collection" aria-labelledby="implementation-heading">
+          <div class="section-heading"><h2 id="implementation-heading">In practice</h2><p>Five projects and architectures to study for a prototype.</p></div>
+          <ol class="resource-list"><li class="resource-card">
+      <span class="resource-number">07</span>
+      <div><p class="eyebrow">agentgateway/agentgateway · GitHub</p>
+      <h3><a href="resources/agentgateway.html">Agentgateway</a></h3>
+      <p>Native MCP request/response mutation through ExtMCP</p><span class="tag">Full README</span></div>
+      <span class="card-arrow" aria-hidden="true">↗</span>
+    </li><li class="resource-card">
+      <span class="resource-number">08</span>
+      <div><p class="eyebrow">microsoft/agent-governance-toolkit · GitHub</p>
+      <h3><a href="resources/microsoft-agent-governance-toolkit.html">Microsoft Agent Governance Toolkit</a></h3>
+      <p>Controlling agent actions as well as tool access</p><span class="tag">Full README</span></div>
+      <span class="card-arrow" aria-hidden="true">↗</span>
+    </li><li class="resource-card">
+      <span class="resource-number">09</span>
+      <div><p class="eyebrow">sarmishra/ZT-MCP-Project · GitHub</p>
+      <h3><a href="resources/zt-mcp-implementation.html">ZT-MCP</a></h3>
+      <p>Building a formal Zero Trust model</p><span class="tag">Full README</span></div>
+      <span class="card-arrow" aria-hidden="true">↗</span>
+    </li><li class="resource-card">
+      <span class="resource-number">10</span>
+      <div><p class="eyebrow">Claw-Guard/ClawGuard · GitHub</p>
+      <h3><a href="resources/clawguard.html">ClawGuard</a></h3>
+      <p>Grounding permissions in the user&#x27;s original request</p><span class="tag">Notes + original</span></div>
+      <span class="card-arrow" aria-hidden="true">↗</span>
+    </li><li class="resource-card">
+      <span class="resource-number">11</span>
+      <div><p class="eyebrow">Uber Engineering · October 2026</p>
+      <h3><a href="resources/uber-mcp-gateway.html">Uber MCP Gateway</a></h3>
+      <p>Enterprise architecture at scale</p><span class="tag">Notes + original</span></div>
+      <span class="card-arrow" aria-hidden="true">↗</span>
+    </li></ol></section>
+      <aside class="research-direction"><p class="eyebrow">WORKING RESEARCH HYPOTHESIS</p><p>These works collectively establish that your idea is technically credible. They also suggest that the novelty probably won&#x27;t lie in introducing a gateway or adding policy checks. It will need to lie in how the gateway coordinates corrective interventions throughout execution.</p><small>Supplied research perspective; relevance labels are editorial judgements.</small></aside>
+    </main>
+  <footer class="site-footer"><a href="index.html">Zero Trust MCP Gateway</a><span>Reading collection · 27 October 2026</span></footer>
+</body>
+</html>

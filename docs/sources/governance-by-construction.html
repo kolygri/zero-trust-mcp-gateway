@@ -1,0 +1,1093 @@
+<article class="ltx_document ltx_authors_1line ltx_leqno">
+<h1 class="ltx_title ltx_title_document" id="source-heading-1">Governance by Construction for Generalist Agents</h1>
+<span class="ltx_pubnotes ltx_pubnotes_meta"><span class="ltx_pubnotes_content"><span class="ltx_pubnote ltx_role_conference"><span class="ltx_note_name">Conference: </span>ACM Conference on AI and Agentic Systems; May 26–29, 2026; San Jose, CA, USA</span><span class="ltx_pubnote ltx_role_booktitle">ACM Conference on AI and Agentic Systems (CAIS ’26), May 26–29, 2026, San Jose, CA, USA</span><span class="ltx_pubnote ltx_role_doi"><span class="ltx_note_name">DOI: </span><a href="https://doi.org/10.1145/3786335.3813192">10.1145/3786335.3813192</a></span><span class="ltx_pubnote ltx_role_isbn"><span class="ltx_note_name">ISBN: </span>979-8-4007-2415-2/2026/05</span><span class="ltx_pubnote ltx_role_ccs"><span class="ltx_note_name">CCS: </span>Computing methodologies Intelligent agents</span></span></span>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Segev Shlomov
+</span><span class="ltx_author_notes"><span class="ltx_author_notes_content">
+<span class="ltx_contact ltx_role_note"><span class="ltx_contact_name">Note: </span>Corresponding author email: segev.shlomov1@ibm.com.
+</span>
+<span class="ltx_contact ltx_role_affiliation"><span class="ltx_contact_name">Affiliation: </span><span class="ltx_text ltx_affiliation_institution" id="id1">IBM</span>, <span class="ltx_text ltx_affiliation_city" id="id2">Haifa</span>, <span class="ltx_text ltx_affiliation_country" id="id3">Israel</span>
+</span></span></span></span>
+<span class="ltx_author_before">, </span><span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Iftach Shoham
+</span><span class="ltx_author_notes"><span class="ltx_author_notes_content">
+<span class="ltx_contact ltx_role_affiliation"><span class="ltx_contact_name">Affiliation: </span><span class="ltx_text ltx_affiliation_institution" id="id4">IBM</span>, <span class="ltx_text ltx_affiliation_city" id="id5">Haifa</span>, <span class="ltx_text ltx_affiliation_country" id="id6">Israel</span>
+</span></span></span></span>
+<span class="ltx_author_before">, </span><span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Alon Oved
+</span><span class="ltx_author_notes"><span class="ltx_author_notes_content">
+<span class="ltx_contact ltx_role_affiliation"><span class="ltx_contact_name">Affiliation: </span><span class="ltx_text ltx_affiliation_institution" id="id7">IBM</span>, <span class="ltx_text ltx_affiliation_city" id="id8">Haifa</span>, <span class="ltx_text ltx_affiliation_country" id="id9">Israel</span>
+</span></span></span></span>
+<span class="ltx_author_before">, </span><span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Ido Levy
+</span><span class="ltx_author_notes"><span class="ltx_author_notes_content">
+<span class="ltx_contact ltx_role_affiliation"><span class="ltx_contact_name">Affiliation: </span><span class="ltx_text ltx_affiliation_institution" id="id10">IBM</span>, <span class="ltx_text ltx_affiliation_city" id="id11">Haifa</span>, <span class="ltx_text ltx_affiliation_country" id="id12">Israel</span>
+</span></span></span></span>
+<span class="ltx_author_before">, </span><span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Sami Marreed
+</span><span class="ltx_author_notes"><span class="ltx_author_notes_content">
+<span class="ltx_contact ltx_role_affiliation"><span class="ltx_contact_name">Affiliation: </span><span class="ltx_text ltx_affiliation_institution" id="id13">IBM</span>, <span class="ltx_text ltx_affiliation_city" id="id14">Haifa</span>, <span class="ltx_text ltx_affiliation_country" id="id15">Israel</span>
+</span></span></span></span>
+<span class="ltx_author_before">, </span><span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Harold Ship
+</span><span class="ltx_author_notes"><span class="ltx_author_notes_content">
+<span class="ltx_contact ltx_role_affiliation"><span class="ltx_contact_name">Affiliation: </span><span class="ltx_text ltx_affiliation_institution" id="id16">IBM</span>, <span class="ltx_text ltx_affiliation_city" id="id17">Haifa</span>, <span class="ltx_text ltx_affiliation_country" id="id18">Israel</span>
+</span></span></span></span>
+<span class="ltx_author_before">, </span><span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Offer Akrabi
+</span><span class="ltx_author_notes"><span class="ltx_author_notes_content">
+<span class="ltx_contact ltx_role_affiliation"><span class="ltx_contact_name">Affiliation: </span><span class="ltx_text ltx_affiliation_institution" id="id19">IBM</span>, <span class="ltx_text ltx_affiliation_city" id="id20">Haifa</span>, <span class="ltx_text ltx_affiliation_country" id="id21">Israel</span>
+</span></span></span></span>
+<span class="ltx_author_before">, </span><span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Sergey Zeltyn
+</span><span class="ltx_author_notes"><span class="ltx_author_notes_content">
+<span class="ltx_contact ltx_role_affiliation"><span class="ltx_contact_name">Affiliation: </span><span class="ltx_text ltx_affiliation_institution" id="id22">IBM</span>, <span class="ltx_text ltx_affiliation_city" id="id23">Haifa</span>, <span class="ltx_text ltx_affiliation_country" id="id24">Israel</span>
+</span></span></span></span>
+<span class="ltx_author_before">, </span><span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Avi Yaeli
+</span><span class="ltx_author_notes"><span class="ltx_author_notes_content">
+<span class="ltx_contact ltx_role_affiliation"><span class="ltx_contact_name">Affiliation: </span><span class="ltx_text ltx_affiliation_institution" id="id25">IBM</span>, <span class="ltx_text ltx_affiliation_city" id="id26">Haifa</span>, <span class="ltx_text ltx_affiliation_country" id="id27">Israel</span>
+</span></span></span></span>
+<span class="ltx_author_before"> and </span><span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Nir Mashkif
+</span><span class="ltx_author_notes"><span class="ltx_author_notes_content">
+<span class="ltx_contact ltx_role_affiliation"><span class="ltx_contact_name">Affiliation: </span><span class="ltx_text ltx_affiliation_institution" id="id28">IBM</span>, <span class="ltx_text ltx_affiliation_city" id="id29">Haifa</span>, <span class="ltx_text ltx_affiliation_country" id="id30">Israel</span>
+</span></span></span></span></div>
+<div class="ltx_dates">© cc</div>
+<div class="ltx_abstract" id="abstract1"><h6 class="ltx_title ltx_title_abstract" id="source-heading-2">Abstract.</h6>
+<p class="ltx_p" id="abstract1.1">Enterprise agents are increasingly expected to operate autonomously across tools and interfaces, yet production deployments require governance by construction. Systems must specify which actions are allowed, when human oversight is required, and what information may be exposed, without rebuilding the agent for each domain. This demo presents CUGA’s policy system, a modular policy-as-code layer that composes with a generalist LLM agent to deliver predictable, auditable, and compliance-aware behavior in compound workflows without model fine-tuning. We present a runtime governance architecture that enforces policy interventions at every critical stage of execution. Rather than passively constraining behavior, policies intercept the agent at five structural checkpoints: upstream of planning (Intent Guard), within the system prompt to steer reasoning (Playbook), at the tool-call boundary to enforce proper usage (Tool Guide), outside the reasoning loop as a Human-in-the-Loop gate for high-risk actions (Tool Approvals), and at the output stage to filter and structure the final response (Output Formatter). Together, these stages embed governance continuously across the agent’s execution pipeline rather than treating it as an afterthought. Using a healthcare scenario and a multi-layered enforcement intervention, the demo shows dynamic playbook injection for structured tool-sequence enforcement, intent guards that block malicious or accidental harmful requests, and human-in-the-loop tool approval checkpoints for potentially destructive actions. The artifact illustrates how typed governance primitives enable faster, safer deployment of enterprise agentic systems while improving policy adherence and execution consistency.</p>
+</div>
+<div class="ltx_keywords">
+<h6 class="ltx_title ltx_title_keywords" id="source-heading-3">Keywords: </h6>Generalist Agent, Computer Using Agent, Governance, Policy System, LLM Agent
+</div><span class="ltx_note ltx_role_cc-license" id="id31"><sup class="ltx_note_mark">†</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">†</sup><span class="ltx_note_type">cc-license: </span>by</span></span></span>
+<section class="ltx_section" id="S1">
+<h2 class="ltx_title ltx_title_section" id="source-heading-4"><span class="ltx_tag ltx_tag_section">1. </span>Introduction</h2>
+<div class="ltx_para" id="S1.p1">
+<p class="ltx_p" id="S1.p1.1">LLM–based agents are increasingly adapted to perform complex, multi-step tasks across enterprise software environments, extending earlier work on conversational RPA, next-action recommendation, and process-aware automation (<a class="ltx_ref" href="#bib.bib16" title="">Yaeli et al., 2022</a>; <a class="ltx_ref" href="#bib.bib11" title="">Zeltyn et al., 2022</a>; <a class="ltx_ref" href="#bib.bib13" title="">Oved et al., 2025</a>). Unlike static chatbots, modern agents integrate planning, internal and external tool-use, memory, and iterative reasoning to execute compound workflows across heterogeneous systems. Recent advances in tool-augmented and computer-using agents enable interaction with APIs, databases, and user interfaces, allowing agents to autonomously retrieve data, modify records and trigger communications. Although this flexibility enables generalization, prior work on LLM automation agents and web-agent benchmarks (<a class="ltx_ref" href="#bib.bib24" title="">Ying et al., 2025</a>) suggests (<a class="ltx_ref" href="#bib.bib20" title="">Ma et al., 2026</a>; <a class="ltx_ref" href="#bib.bib21" title="">Yang et al., 2025</a>; <a class="ltx_ref" href="#bib.bib22" title="">Luo et al., 2025</a>; <a class="ltx_ref" href="#bib.bib23" title="">Shi et al., 2025</a>; <a class="ltx_ref" href="#bib.bib25" title="">Jiang et al., 2025</a>; <a class="ltx_ref" href="#bib.bib26" title="">Chen et al., 2025</a>) that it also introduces unpredictability: agents may hallucinate facts, misuse tools, violate procedural constraints, behave inconsistently, or expose sensitive information (<a class="ltx_ref" href="#bib.bib12" title="">Schwartz et al., 2023</a>; <a class="ltx_ref" href="#bib.bib14" title="">Shlomov et al., 2025</a>; <a class="ltx_ref" href="#bib.bib15" title="">Levy et al., 2024</a>). In enterprise settings, such failures are not merely quality degradations; they can result in compliance violations, data leakage, financial impacts, or reputational damage.</p>
+</div>
+<div class="ltx_para" id="S1.p2">
+<p class="ltx_p" id="S1.p2.1">Many current governance strategies rely on prompt-engineering techniques, instruction stuffing, constraint injection, and post-hoc validation (<a class="ltx_ref" href="#bib.bib1" title="">Tsai and Bagdasarian, 2025</a>; <a class="ltx_ref" href="#bib.bib2" title="">Gaurav et al., 2025</a>; <a class="ltx_ref" href="#bib.bib4" title="">Zwerdling et al., 2025</a>). While these approaches can shape model behavior in controlled scenarios, they exhibit several structural limitations. Behavioral constraints are tightly coupled to prompt structure and can become brittle as policies evolve; governance logic often becomes duplicated across multi-agent deployments; enforcement decisions are delegated to model reasoning and therefore difficult to audit; and independently implemented guardrails may produce inconsistent outcomes without principled conflict resolution. More structured approaches encode operating procedures through role specialization or guard code (<a class="ltx_ref" href="#bib.bib3" title="">Hong et al., 2023</a>; <a class="ltx_ref" href="#bib.bib4" title="">Zwerdling et al., 2025</a>), but typically require substantial architectural commitment or domain-specific reconfiguration when procedures change. Parlant’s (<a class="ltx_ref" href="#bib.bib9" title="">Parlant, 2025</a>) guideline<span class="ltx_text" id="S1.p2.1.1">-</span>driven alignment layers dynamically retrieve and inject natural-language rules and tool use at inference time but remain focused on local, chat-level compliance. Skill-based frameworks such as Claude’s skill system provide reusable behavioral templates applied during execution. Both approaches still rely on the model to interpret and follow instructions, leaving policy adherence inherently probabilistic and vulnerable. As enterprise adoption accelerates, governance must evolve beyond prompt-level heuristics toward policy-by-construction: explicit, typed, runtime-enforced control primitives that operate independently of the model itself.</p>
+</div>
+<div class="ltx_para" id="S1.p3">
+<p class="ltx_p" id="S1.p3.1">In this work, we present the implementation of our vision for trustworthy, enterprise-ready generalist agents, building on prior work on automation trust, web-agent bottlenecks, and safety-oriented agent evaluation, and demonstrate it through the open-source CUGA agent (<a class="ltx_ref" href="#bib.bib6" title="">Shlomov et al., 2026</a>; <a class="ltx_ref" href="#bib.bib5" title="">Marreed et al., 2025</a>; <a class="ltx_ref" href="#bib.bib17" title="">CUGA Project, 2026a</a>). We introduce the <span class="ltx_text ltx_font_italic" id="S1.p3.1.1">CUGA policy system</span>, a modular policy-as-code layer built into CUGA without requiring model fine-tuning. The framework introduces typed governance primitives that constrain intent recognition, planning, tool invocation, human approval requirements, and output formatting <em class="ltx_emph ltx_font_italic" id="S1.p3.1.2">at runtime</em>, enforcing consistency and governance. Policies are matched using lightweight triggers (keywords and embedding similarity), which mitigates reliance on probabilistic methods, resolved through explicit conflict handling, and produces structured explanation traces for observability and quality assurance. It offers no need for architectural changes, complies using open-source models (e.g., <span class="ltx_text ltx_font_typewriter" id="S1.p3.1.3">GPT-OSS-120B</span>), for on-prem deployment, does not affect or modify the agent’s output, and showcases build-in observability. By externalizing governance into composable runtime policies, the system enables predictable, auditable, and compliance-aware behavior across compound workflows while preserving the flexibility of general-purpose LLM agents ensuring compliance and trustworthiness in enterprise-ready agents. We demonstrate our approach through an end-to-end enterprise workflow that highlights runtime policy enforcement. The demonstration centers on two representative scenarios: a healthcare assistance workflow and a multi-layered enforcement intervention.</p>
+</div>
+<div class="ltx_para" id="S1.p4">
+<p class="ltx_p" id="S1.p4.1">The demo showcases four out of five modular governance primitives defined as markdown policies at by interference at difference execution checkpoints. The Playbook enforces structured multi-step execution by dynamically associating requests with predefined tool sequences and enterprise-specific constraints, as the Tool Guide enriches tool description. The Intent Guard prevents malicious or accidental harmful actions by intercepting and blocking restricted intents prior to tool execution. The Tool Approval mechanism introduces a <span class="ltx_text ltx_font_italic" id="S1.p4.1.1">human-in-the-loop</span> (HITL) checkpoint that pauses the execution graph and requires explicit confirmation before potentially destructive actions can proceed.</p>
+</div>
+</section>
+<section class="ltx_section" id="S2">
+<h2 class="ltx_title ltx_title_section" id="source-heading-5"><span class="ltx_tag ltx_tag_section">2. </span>Methods Overview</h2>
+<div class="ltx_para" id="S2.p1">
+<p class="ltx_p" id="S2.p1.1">Our CUGA’s policy system strengthens enterprise-ready governance through dynamic interception of different policies throughout the agent’s execution graph via the trigger mechanism in five different points: First, <em class="ltx_emph ltx_font_italic" id="S2.p1.1.1">Intent Guard</em> sit at the very beginning of the process to immediately block bad requests before the agent even takes action. Second, <em class="ltx_emph ltx_font_italic" id="S2.p1.1.2">Playbook</em> are seamlessly injected into the system prompt, step-by-step to steer the agent’s planning and influence its reasoning. Third, <em class="ltx_emph ltx_font_italic" id="S2.p1.1.3">Tool guide</em> update and mutate tool descriptions right before execution to instruct the agent on proper tool usage. Fourth, <em class="ltx_emph ltx_font_italic" id="S2.p1.1.4">Tool approval</em> act as a critical safeguard outside the reasoning loop to gate execution, pausing the graph to wait for human confirmation if a risky action is attempted. Finally, <em class="ltx_emph ltx_font_italic" id="S2.p1.1.5">Output formatter</em> serves as the last intervention point to appropriately filter the final answer before it is returned. This section presents the architectural design principles, data models, and runtime mechanisms underlying each policy category. The emphasis is placed on modularity, extensibility, and seamless integration with the LangGraph execution framework.</p>
+</div>
+<section class="ltx_subsection" id="S2.SS1">
+<h3 class="ltx_title ltx_title_subsection" id="source-heading-6"><span class="ltx_tag ltx_tag_subsection">2.1. </span>Policy System Architecture</h3>
+<div class="ltx_para" id="S2.SS1.p1">
+<p class="ltx_p" id="S2.SS1.p1.1">The policy system is implemented as a modular, layered framework consisting of four architectural tiers:</p>
+</div>
+<div class="ltx_para" id="S2.SS1.p2">
+<ol class="ltx_enumerate" id="S2.I1">
+<li class="ltx_item" id="S2.I1.i1"><span class="ltx_tag ltx_tag_item">(1)</span>
+<div class="ltx_para" id="S2.I1.i1.p1">
+<p class="ltx_p" id="S2.I1.i1.p1.1"><span class="ltx_text ltx_font_bold" id="S2.I1.i1.p1.1.1">Policy Models Layer</span>: Strongly-typed data models defining policy schemas, triggers, and action semantics.</p>
+</div></li>
+<li class="ltx_item" id="S2.I1.i2"><span class="ltx_tag ltx_tag_item">(2)</span>
+<div class="ltx_para" id="S2.I1.i2.p1">
+<p class="ltx_p" id="S2.I1.i2.p1.1"><span class="ltx_text ltx_font_bold" id="S2.I1.i2.p1.1.1">Storage Layer</span>: Persistent and semantic storage backed by a vector database for similarity-based retrieval.</p>
+</div></li>
+<li class="ltx_item" id="S2.I1.i3"><span class="ltx_tag ltx_tag_item">(3)</span>
+<div class="ltx_para" id="S2.I1.i3.p1">
+<p class="ltx_p" id="S2.I1.i3.p1.1"><span class="ltx_text ltx_font_bold" id="S2.I1.i3.p1.1.1">Policy Agent Layer</span>: Runtime matching and conflict-resolution logic that evaluates policies against execution context.</p>
+</div></li>
+<li class="ltx_item" id="S2.I1.i4"><span class="ltx_tag ltx_tag_item">(4)</span>
+<div class="ltx_para" id="S2.I1.i4.p1">
+<p class="ltx_p" id="S2.I1.i4.p1.1"><span class="ltx_text ltx_font_bold" id="S2.I1.i4.p1.1.1">Enactment Layer</span>: Execution primitives that apply policy decisions within the LangGraph workflow.</p>
+</div></li>
+</ol>
+</div>
+<div class="ltx_para ltx_noindent" id="S2.SS1.p3">
+<p class="ltx_p" id="S2.SS1.p3.1">This layered design enforces separation of concerns: policy representation is decoupled from storage, matching logic, and execution semantics. Policy evaluation occurs at four semantically meaningful checkpoints: (1) intent analysis, (2) tool preparation, (3) post-code generation, and (4) final response generation.</p>
+</div>
+<section class="ltx_paragraph" id="S2.SS1.SSS0.Px1">
+<h4 class="ltx_title ltx_font_bold ltx_title_paragraph" id="source-heading-7">Trigger System.</h4>
+<div class="ltx_para" id="S2.SS1.SSS0.Px1.p1">
+<p class="ltx_p" id="S2.SS1.SSS0.Px1.p1.1">All policy types, except for Tool Approval, rely on a <span class="ltx_text ltx_font_italic" id="S2.SS1.SSS0.Px1.p1.1.1">configurable trigger mechanism</span>. Triggers are defined as discriminated union types, enabling flexible matching strategies within a unified interface. Supported trigger mechanisms include:</p>
+</div>
+<div class="ltx_para" id="S2.SS1.SSS0.Px1.p2">
+<ul class="ltx_itemize" id="S2.I2">
+<li class="ltx_item" id="S2.I2.i1"><span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S2.I2.i1.p1">
+<p class="ltx_p" id="S2.I2.i1.p1.1"><span class="ltx_text ltx_font_bold" id="S2.I2.i1.p1.1.1">Natural Language</span>: Semantic similarity matching via embedding-based retrieval with configurable similarity thresholds.</p>
+</div></li>
+<li class="ltx_item" id="S2.I2.i2"><span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S2.I2.i2.p1">
+<p class="ltx_p" id="S2.I2.i2.p1.1"><span class="ltx_text ltx_font_bold" id="S2.I2.i2.p1.1.1">Keyword</span>: Exact or fuzzy keyword matching with logical composition (AND/OR) and case sensitivity controls.</p>
+</div></li>
+<li class="ltx_item" id="S2.I2.i3"><span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S2.I2.i3.p1">
+<p class="ltx_p" id="S2.I2.i3.p1.1"><span class="ltx_text ltx_font_bold" id="S2.I2.i3.p1.1.1">Application</span>: Contextual matching based on the active application domain.</p>
+</div></li>
+<li class="ltx_item" id="S2.I2.i4"><span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S2.I2.i4.p1">
+<p class="ltx_p" id="S2.I2.i4.p1.1"><span class="ltx_text ltx_font_bold" id="S2.I2.i4.p1.1.1">State</span>: Evaluation against structured agent state using equality, containment, or regular expression operators.</p>
+</div></li>
+<li class="ltx_item" id="S2.I2.i5"><span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S2.I2.i5.p1">
+<p class="ltx_p" id="S2.I2.i5.p1.1"><span class="ltx_text ltx_font_bold" id="S2.I2.i5.p1.1.1">Tool</span>: Detection of tool usage at specific execution stages (pre- or post-invocation).</p>
+</div></li>
+</ul>
+</div>
+<div class="ltx_para ltx_noindent" id="S2.SS1.SSS0.Px1.p3">
+<p class="ltx_p" id="S2.SS1.SSS0.Px1.p3.1">Triggers may target different contextual fields, including inferred intent, intermediate sub-tasks, and final agent responses. This flexibility enables policies to intervene at different abstraction levels of the execution life-cycle. Policy persistence and semantic retrieval are implemented using Milvus as a vector database backend. Embeddings are generated using either API or a local-based encoder (<a class="ltx_ref" href="#bib.bib7" title="">Wang et al., 2020</a>).</p>
+</div>
+</section>
+</section>
+<section class="ltx_subsection" id="S2.SS2">
+<h3 class="ltx_title ltx_title_subsection" id="source-heading-8"><span class="ltx_tag ltx_tag_subsection">2.2. </span>Intent Guard</h3>
+<div class="ltx_para" id="S2.SS2.p1">
+<p class="ltx_p" id="S2.SS2.p1.1">Intent Guard policies enforce hard constraints by intercepting user intent outside the agent reasoning loop, before the agent acts. Their primary purpose is early-stage blocking of unauthorized or restricted operations. Upon activation, an Intent Guard terminates execution immediately, this early termination mechanism prevents downstream reasoning or unwanted tool invocation. Intent Guard trigger evaluation follows a two-phase process: <span class="ltx_text ltx_font_bold" id="S2.SS2.p1.1.1">(1) Deterministic:</span> keyword-based triggers are evaluated first. Intent Guards are prioritized over other policy types to guarantee that blocking constraints supersede advisory policies. <span class="ltx_text ltx_font_bold" id="S2.SS2.p1.1.2">(2) conflict resolution:</span> for natural-language triggers, multiple policies may satisfy the similarity threshold. In such cases, an LLM-based structured reasoning step selects the most appropriate policy. The model outputs a selected index, confidence score, and justification.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S2.SS3">
+<h3 class="ltx_title ltx_title_subsection" id="source-heading-9"><span class="ltx_tag ltx_tag_subsection">2.3. </span>Playbook</h3>
+<div class="ltx_para" id="S2.SS3.p1">
+<p class="ltx_p" id="S2.SS3.p1.1">Playbook policies provide structured workflow guidance for complex tasks. Rather than blocking execution, they shape agent planning behavior by injecting step-by-step instructions. This is particularly valuable as it delivers precise, targeted instructions without inflating the prompt with excessive tokens. This causes the agent to follow instructions and consistently comply to the user’s tasks. The Playbook consists of markdown-formatted guidance content, an optional ordered list of steps, optional expected outcomes per step, optional tool constraints per step, trigger definitions, and priority. This structured representation enables fine-grained orchestration and verification of multi-step workflows.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S2.SS4">
+<h3 class="ltx_title ltx_title_subsection" id="source-heading-10"><span class="ltx_tag ltx_tag_subsection">2.4. </span>Tool Approval</h3>
+<div class="ltx_para" id="S2.SS4.p1">
+<p class="ltx_p" id="S2.SS4.p1.1">Tool Approval policies enforce <span class="ltx_text ltx_font_italic" id="S2.SS4.p1.1.1">HITL</span> oversight by requiring explicit confirmation before executing sensitive tools. Unlike trigger-based policies, they are evaluated after code generation, allowing inspection of the actual tools the agent intends to invoke in runtime.</p>
+</div>
+<div class="ltx_para" id="S2.SS4.p2">
+<p class="ltx_p" id="S2.SS4.p2.1">After code generation, the system scans the code for tool invocations. If a matching tool is detected, execution pauses and enters a waiting state. The agent resumes only after explicit approval (or automatic approval, if configured). If multiple policies match, the highest-priority policy is applied. This mechanism is particularly useful for sensitive operations such as data modifications (e.g., database writes and updates) and external API calls, where interactions with third-party services should be reviewed before execution.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S2.SS5">
+<h3 class="ltx_title ltx_title_subsection" id="source-heading-11"><span class="ltx_tag ltx_tag_subsection">2.5. </span>Tool Guide</h3>
+<div class="ltx_para" id="S2.SS5.p1">
+<p class="ltx_p" id="S2.SS5.p1.1">Tool Guide policies augment tool descriptions with contextual or compliance-related guidance. Multiple Tool Guide policies may apply simultaneously, as they are cumulative rather than mutually exclusive. At runtime, tool definitions are deep-copied and enriched with the configured guidance, which may be appended to the original description. The deep-copy mechanism ensures that modifications remain session-scoped and do not permanently alter the underlying tool metadata.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S2.SS6">
+<h3 class="ltx_title ltx_title_subsection" id="source-heading-12"><span class="ltx_tag ltx_tag_subsection">2.6. </span>Output Formatter</h3>
+<div class="ltx_para" id="S2.SS6.p1">
+<p class="ltx_p" id="S2.SS6.p1.1">Output Formatter policies transform the final response into a structured format. They support three modes: (1) a predefined template verbatim, (2) restructuring the response as formatted Markdown, or (3) extracting structured data according to a specified JSON schema. Trigger evaluation considers both the user input and the generated response, enabling context-aware formatting decisions without relying on the agent’s capabilities.</p>
+</div>
+</section>
+</section>
+<section class="ltx_section" id="S3">
+<h2 class="ltx_title ltx_title_section" id="source-heading-13"><span class="ltx_tag ltx_tag_section">3. </span>System Demonstration: CUGA’s Policy System</h2>
+<div class="ltx_para" id="S3.p1">
+<p class="ltx_p" id="S3.p1.1">The demo video<span class="ltx_note ltx_role_footnote" id="footnote1"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup>
+<span class="ltx_tag ltx_tag_note">1</span>
+<a class="ltx_ref ltx_url ltx_font_typewriter" href="https://www.youtube.com/watch?v=Ie5ZODIW5gk" title="">https://www.youtube.com/watch?v=Ie5ZODIW5gk</a></span></span></span> presents the live CUGA interface, illustrating how governance policies are enforced through targeted interventions in the agent execution graph. Rather than embedding complex enterprise constraints directly in prompts, CUGA applies policies dynamically during agent execution, enabling safer and more reliable task handling (for more information see Section <a class="ltx_ref" href="#S2" title="2. Methods Overview ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">2</span></a>). Highlighting the importance of governance by construction, the walkthrough presents two representative scenarios designed to showcase CUGA’s ability to guide agent behavior while maintaining strong safety guarantees: (1) a complex healthcare workflow (OAK) and (2) a multi-layered security intervention.</p>
+</div>
+<section class="ltx_paragraph" id="S3.SS0.SSS0.Px1">
+<h4 class="ltx_title ltx_font_bold ltx_title_paragraph" id="source-heading-14">Playbook</h4>
+<div class="ltx_para" id="S3.SS0.SSS0.Px1.p1">
+<p class="ltx_p" id="S3.SS0.SSS0.Px1.p1.1">The first scenario demonstrates CUGA in the context of a healthcare assistance task. A user issues the request <span class="ltx_text ltx_font_italic" id="S3.SS0.SSS0.Px1.p1.1.1">“find primary care doctors near me.”</span>, CUGA dynamically associates the request with a predefined <span class="ltx_text ltx_font_italic" id="S3.SS0.SSS0.Px1.p1.1.2">playbook</span> that enforces a structured execution policy for mandatory tool sequence to grantee reliable compliance. The execution begins with context extraction, where CUGA retrieves the user’s active insurance coverage and extracts key attributes required for downstream operations, including the relevant contract UID and brand code. Guided by the injected policy, the agent then invokes the <span class="ltx_text ltx_font_italic" id="S3.SS0.SSS0.Px1.p1.1.3">find care suggestions</span> tool to map the natural language phrase “primary care” to the corresponding internal system code (code 25). This mapping ensures alignment with the underlying service taxonomy.</p>
+</div>
+<div class="ltx_para" id="S3.SS0.SSS0.Px1.p2">
+<p class="ltx_p" id="S3.SS0.SSS0.Px1.p2.1">Following this step, the system performs a paginated provider search guided by the <span class="ltx_text ltx_font_bold" id="S3.SS0.SSS0.Px1.p2.1.1">Tool Guide</span> critical pagination requirement, issuing multiple API calls that collectively return 14 candidate providers. During the retrieval process, CUGA automatically applies a network-status constraint to ensure that only <span class="ltx_text ltx_font_italic" id="S3.SS0.SSS0.Px1.p2.1.2">in-network</span> providers are considered. The results are then aggregated and presented to the user as a cleanly formatted table listing nearby in-network primary care physicians. This scenario demonstrates how CUGA is enabled to operate within a controlled policy framework while enforcing structured workflows, tool usage constraints, and enterprise-specific rules.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="S3.SS0.SSS0.Px2">
+<h4 class="ltx_title ltx_font_bold ltx_title_paragraph" id="source-heading-15">Intent Guards and Tool Approval</h4>
+<div class="ltx_para" id="S3.SS0.SSS0.Px2.p1">
+<p class="ltx_p" id="S3.SS0.SSS0.Px2.p1.1">The second scenario focuses on CUGA’s preventive capabilities, which introduces safety mechanisms that operate independently of the agent’s reasoning process. First, a user attempts to execute a malicious (which can also be by accidental) command by requesting to <span class="ltx_text ltx_font_italic" id="S3.SS0.SSS0.Px2.p1.1.1">“delete every contact in CRM.”</span> the <span class="ltx_text ltx_font_italic" id="S3.SS0.SSS0.Px2.p1.1.2">Intent Guard</span> immediately intercepts the request and issues a block command that terminates the execution graph. As a result, the agent never receives the instruction, preventing the agent from reasoning about or executing the harmful request. The demonstration then simulates a scenario in which an attacker paraphrases the request in a way that some how bypasses the initial guard. In this case, the agent proceeds to generate code intended to drop a database. Before the action can be executed, CUGA’s <span class="ltx_text ltx_font_italic" id="S3.SS0.SSS0.Px2.p1.1.3">Tool Approval</span> mechanism pauses the execution graph and introduces a HITL checkpoint. The system requires explicit human confirmation before allowing the operation to proceed, ensuring that potentially destructive actions cannot be executed without oversight or accountability by the operator. Together, these scenarios highlight CUGA’s ability to combine policy-driven execution with layered safety mechanisms, enabling reliable and secure deployment of language agents in enterprise environments.</p>
+</div>
+</section>
+</section>
+<section class="ltx_section" id="S4">
+<h2 class="ltx_title ltx_title_section" id="source-heading-16"><span class="ltx_tag ltx_tag_section">4. </span>Results</h2>
+<div class="ltx_para" id="S4.p1">
+<p class="ltx_p" id="S4.p1.1">We evaluate CUGA’s <span class="ltx_text ltx_font_italic" id="S4.p1.1.1">policy system</span> on two enterprise-focused generalist agent benchmarks that reflect the structured, policy-governed workflows central to our demonstration. <span class="ltx_text ltx_font_bold" id="S4.p1.1.2">OAK</span> (<a class="ltx_ref" href="#bib.bib18" title="">CUGA Project, 2026b</a>) is a 27-task customer-care benchmark grounded in realistic insurance scenarios, assessing the agent’s ability to process claims, retrieve coverage information, and answer health-insurance questions via API calls. <span class="ltx_text ltx_font_bold" id="S4.p1.1.3">BPO</span> (<a class="ltx_ref" href="#bib.bib19" title="">IBM Research, 2026</a>) is a 26-task business-process benchmark covering a broader range of enterprise back-office operations, providing a more challenging generalist evaluation. Together, these benchmarks reflect real-world enterprise settings where tasks carry well-defined procedures, tool-heavy execution, and low tolerance for deviation. All results are reported across three backbone models: <span class="ltx_text ltx_font_italic" id="S4.p1.1.4">GPT-OSS-120B</span>, our main focus as an open-source model, <span class="ltx_text ltx_font_italic" id="S4.p1.1.5">GPT-4.1</span>, and <span class="ltx_text ltx_font_italic" id="S4.p1.1.6">Claude Opus-4.5</span>. The primary metric is <span class="ltx_text ltx_font_bold" id="S4.p1.1.7">Success Rate</span> (SR): the percentage of tasks completed correctly end-to-end. Each configuration was executed over multiple independent runs with a clean environment.</p>
+</div>
+<figure class="ltx_table" id="S4.T1">
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle" id="S4.T1.2">
+<thead class="ltx_thead">
+<tr class="ltx_tr" id="S4.T1.2.1">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="S4.T1.2.1.1"><span class="ltx_text ltx_font_bold" id="S4.T1.2.1.1.1">Benchmark</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="S4.T1.2.1.2"><span class="ltx_text ltx_font_bold" id="S4.T1.2.1.2.1">Model</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="S4.T1.2.1.3"><span class="ltx_text ltx_font_bold" id="S4.T1.2.1.3.1">SR (W/O <math alttext="\rightarrow" class="ltx_Math" display="inline" id="S4.T1.m1"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math> W)</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="S4.T1.2.1.4"><math alttext="\Delta" class="ltx_Math" display="inline" id="S4.T1.m2"><semantics><mi>Δ</mi><annotation encoding="application/x-tex">\Delta</annotation></semantics></math></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr" id="S4.T1.2.2">
+<td class="ltx_td ltx_align_center ltx_border_t" id="S4.T1.2.2.1" rowspan="3"><span class="ltx_text" id="S4.T1.2.2.1.1">OAK</span></td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="S4.T1.2.2.2">GPT-OSS-120B</td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="S4.T1.2.2.3"><math alttext="75\%\rightarrow 100\%" class="ltx_Math" display="inline" id="S4.T1.m3"><semantics><mrow><mrow><mn>75</mn><mo>%</mo></mrow><mo stretchy="false">→</mo><mrow><mn>100</mn><mo>%</mo></mrow></mrow><annotation encoding="application/x-tex">75\%\rightarrow 100\%</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="S4.T1.2.2.4"><math alttext="+25" class="ltx_Math" display="inline" id="S4.T1.m4"><semantics><mrow><mo>+</mo><mn>25</mn></mrow><annotation encoding="application/x-tex">+25</annotation></semantics></math> pp</td></tr>
+<tr class="ltx_tr" id="S4.T1.2.3">
+<td class="ltx_td ltx_align_center" id="S4.T1.2.3.1">GPT-4.1</td>
+<td class="ltx_td ltx_align_center" id="S4.T1.2.3.2"><math alttext="70\%\rightarrow 96\%" class="ltx_Math" display="inline" id="S4.T1.m5"><semantics><mrow><mrow><mn>70</mn><mo>%</mo></mrow><mo stretchy="false">→</mo><mrow><mn>96</mn><mo>%</mo></mrow></mrow><annotation encoding="application/x-tex">70\%\rightarrow 96\%</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_center" id="S4.T1.2.3.3"><math alttext="+26" class="ltx_Math" display="inline" id="S4.T1.m6"><semantics><mrow><mo>+</mo><mn>26</mn></mrow><annotation encoding="application/x-tex">+26</annotation></semantics></math> pp</td></tr>
+<tr class="ltx_tr" id="S4.T1.2.4">
+<td class="ltx_td ltx_align_center" id="S4.T1.2.4.1">Claude Opus-4.5</td>
+<td class="ltx_td ltx_align_center" id="S4.T1.2.4.2"><math alttext="81\%\rightarrow 96\%" class="ltx_Math" display="inline" id="S4.T1.m7"><semantics><mrow><mrow><mn>81</mn><mo>%</mo></mrow><mo stretchy="false">→</mo><mrow><mn>96</mn><mo>%</mo></mrow></mrow><annotation encoding="application/x-tex">81\%\rightarrow 96\%</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_center" id="S4.T1.2.4.3"><math alttext="+15" class="ltx_Math" display="inline" id="S4.T1.m8"><semantics><mrow><mo>+</mo><mn>15</mn></mrow><annotation encoding="application/x-tex">+15</annotation></semantics></math> pp</td></tr>
+<tr class="ltx_tr" id="S4.T1.2.5">
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_t" id="S4.T1.2.5.1" rowspan="3"><span class="ltx_text" id="S4.T1.2.5.1.1">BPO</span></td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="S4.T1.2.5.2">GPT-OSS-120B</td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="S4.T1.2.5.3"><math alttext="49.2\%\rightarrow 82.3\%" class="ltx_Math" display="inline" id="S4.T1.m9"><semantics><mrow><mrow><mn>49.2</mn><mo>%</mo></mrow><mo stretchy="false">→</mo><mrow><mn>82.3</mn><mo>%</mo></mrow></mrow><annotation encoding="application/x-tex">49.2\%\rightarrow 82.3\%</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="S4.T1.2.5.4"><math alttext="+33.1" class="ltx_Math" display="inline" id="S4.T1.m10"><semantics><mrow><mo>+</mo><mn>33.1</mn></mrow><annotation encoding="application/x-tex">+33.1</annotation></semantics></math> pp</td></tr>
+<tr class="ltx_tr" id="S4.T1.2.6">
+<td class="ltx_td ltx_align_center" id="S4.T1.2.6.1">GPT-4.1</td>
+<td class="ltx_td ltx_align_center" id="S4.T1.2.6.2"><math alttext="28.5\%\rightarrow 66.2\%" class="ltx_Math" display="inline" id="S4.T1.m11"><semantics><mrow><mrow><mn>28.5</mn><mo>%</mo></mrow><mo stretchy="false">→</mo><mrow><mn>66.2</mn><mo>%</mo></mrow></mrow><annotation encoding="application/x-tex">28.5\%\rightarrow 66.2\%</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_center" id="S4.T1.2.6.3"><math alttext="+37.7" class="ltx_Math" display="inline" id="S4.T1.m12"><semantics><mrow><mo>+</mo><mn>37.7</mn></mrow><annotation encoding="application/x-tex">+37.7</annotation></semantics></math> pp</td></tr>
+<tr class="ltx_tr" id="S4.T1.2.7">
+<td class="ltx_td ltx_align_center ltx_border_bb" id="S4.T1.2.7.1">Claude Opus-4.5</td>
+<td class="ltx_td ltx_align_center ltx_border_bb" id="S4.T1.2.7.2"><math alttext="50.0\%\rightarrow 68.5\%" class="ltx_Math" display="inline" id="S4.T1.m13"><semantics><mrow><mrow><mn>50.0</mn><mo>%</mo></mrow><mo stretchy="false">→</mo><mrow><mn>68.5</mn><mo>%</mo></mrow></mrow><annotation encoding="application/x-tex">50.0\%\rightarrow 68.5\%</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_center ltx_border_bb" id="S4.T1.2.7.3"><math alttext="+18.5" class="ltx_Math" display="inline" id="S4.T1.m14"><semantics><mrow><mo>+</mo><mn>18.5</mn></mrow><annotation encoding="application/x-tex">+18.5</annotation></semantics></math> pp</td></tr>
+</tbody>
+</table></div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table">Table 1. </span>Success Rate on OAK and BPO benchmarks, with and without CUGA’s policy system, across three backbone models. W/O = without policy system; W = with policy system.</figcaption>
+</figure>
+<div class="ltx_para" id="S4.p2">
+<p class="ltx_p" id="S4.p2.1">The results in Table <a class="ltx_ref" href="#S4.T1" title="Table 1 ‣ 4. Results ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">1</span></a> show consistent and substantial gains across both benchmarks and all three models, ranging from <math alttext="+15" class="ltx_Math" display="inline" id="S4.p2.m1"><semantics><mrow><mo>+</mo><mn>15</mn></mrow><annotation encoding="application/x-tex">+15</annotation></semantics></math> to <math alttext="+37.7" class="ltx_Math" display="inline" id="S4.p2.m2"><semantics><mrow><mo>+</mo><mn>37.7</mn></mrow><annotation encoding="application/x-tex">+37.7</annotation></semantics></math> percentage points. On OAK Bench, the policy system drives GPT-OSS-120B to a perfect 100% SR, with GPT-4.1 and Claude Opus-4.5 reaching 96%. This is particularly evident in complex, multi-step tasks where, without the policy system, the agent deviates from required procedures or invokes tools out of sequence, mirroring how the demo’s workflow becomes a structured, reliable process only once the Playbook is active. On the more demanding BPO benchmark, absolute gains are even larger: GPT-4.1 improves by <math alttext="+37.7" class="ltx_Math" display="inline" id="S4.p2.m3"><semantics><mrow><mo>+</mo><mn>37.7</mn></mrow><annotation encoding="application/x-tex">+37.7</annotation></semantics></math> pp despite its lower baseline, suggesting the policy system is especially impactful where the model’s native instruction-following is weakest. Taken together, these results confirm that <em class="ltx_emph ltx_font_italic" id="S4.p2.1.1">governance-by-construction</em> is both effective and model-agnostic, achieving strong and consistent performance without reliance on frontier LLMs. Runtime governance does, however, introduce token overhead, an inherent consequence of replacing probabilistic compliance with explicit, auditable instructions (full figures in Section <a class="ltx_ref" href="#A1" title="Appendix A Ablation Study: BPO Benchmark ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">A</span></a>). In enterprise deployments where a single policy violation may constitute a compliance breach or trigger a destructive operation, this tradeoff is well justified.</p>
+</div>
+<section class="ltx_subsection" id="S4.SS1">
+<h3 class="ltx_title ltx_title_subsection" id="source-heading-17"><span class="ltx_tag ltx_tag_subsection">4.1. </span>BPO Policy Ablation</h3>
+<div class="ltx_para" id="S4.SS1.p1">
+<p class="ltx_p" id="S4.SS1.p1.1">To isolate the contribution of individual governance primitives, we ran CUGA on BPO under a controlled ablation: <em class="ltx_emph ltx_font_italic" id="S4.SS1.p1.1.1">no policies</em>, <em class="ltx_emph ltx_font_italic" id="S4.SS1.p1.1.2">2 policies</em>, and <em class="ltx_emph ltx_font_italic" id="S4.SS1.p1.1.3">5 policies</em>, using <span class="ltx_text ltx_font_typewriter" id="S4.SS1.p1.1.4">GPT-OSS-120B</span>. Each configuration was executed over three independent runs with a clean vector store (Milvus) to eliminate carryover effects. Policies were matched at runtime via lightweight triggers and injected into the agent loop without model fine-tuning. Success rate improves monotonically: 46.2% (12.0/26) with no policies <math alttext="\rightarrow" class="ltx_Math" display="inline" id="S4.SS1.p1.m1"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math> 71.8% with 2 policies <math alttext="\rightarrow" class="ltx_Math" display="inline" id="S4.SS1.p1.m2"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math> 78.2% with 5 policies (+32.0 pp overall). Each step corresponds directly to the governance primitives introduced in Section <a class="ltx_ref" href="#S2" title="2. Methods Overview ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">2</span></a>:</p>
+</div>
+<div class="ltx_para" id="S4.SS1.p2">
+<p class="ltx_p" id="S4.SS1.p2.1"><span class="ltx_text ltx_font_bold" id="S4.SS1.p2.1.1">(1) Capability Boundaries (Intent Guard).</span>Without policies, the agent attempted to answer unsupported queries by requesting irrelevant identifiers or invoking unrelated APIs. An explicit capability-boundary policy caused it to correctly decline out-of-scope questions, converting multiple tasks from 0/3 to 3/3 (e.g., Tasks 16, 19, 21–23).</p>
+</div>
+<div class="ltx_para" id="S4.SS1.p3">
+<p class="ltx_p" id="S4.SS1.p3.1"><span class="ltx_text ltx_font_bold" id="S4.SS1.p3.1.1">(2) Tool Guide.</span> Several failures stemmed from calling known-unreliable endpoints (returning 503 errors or malformed schemas). Augmenting tool descriptions with warning guidance caused the agent to re-route to stable APIs, stabilizing previously flaky tasks (e.g., Tasks 12, 14, 18).</p>
+</div>
+<div class="ltx_para" id="S4.SS1.p4">
+<p class="ltx_p" id="S4.SS1.p4.1"><span class="ltx_text ltx_font_bold" id="S4.SS1.p4.1.1">(3) Playbook (Structured Reasoning Constraint).</span> For multi-metric questions, the agent previously shortcut to summary endpoints and returned incorrect counts. A multi-API reasoning playbook enforced granular tool selection, resolving systematic count errors (e.g., Task 9) and restoring full correctness. Full per-task results and evaluation sub-metrics are provided in Section <a class="ltx_ref" href="#A1" title="Appendix A Ablation Study: BPO Benchmark ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">A</span></a> of the supplementary material.</p>
+</div>
+</section>
+</section>
+<section class="ltx_section" id="S5">
+<h2 class="ltx_title ltx_title_section" id="source-heading-18"><span class="ltx_tag ltx_tag_section">5. </span>Conclusion - Our Vision</h2>
+<div class="ltx_para" id="S5.p1">
+<p class="ltx_p" id="S5.p1.1">As LLM-based agents become increasingly prevalent across industry, their autonomous operation in diverse and sensitive environments introduces critical challenges around safety, compliance, and predictability. Recent incidents involving data and privacy leakage in computer-using agents underscore the urgency of addressing these risks, particularly as deployment moves beyond controlled research settings into production environments handling real users and sensitive data. Our vision is grounded in the belief that capable agents and trustworthy agents should be one and the same. As generalist computer-using agents progress toward production readiness, a principled governance layer becomes not a limitation, but a prerequisite for responsible deployment. This work demonstrates one realization of that vision through CUGA’s policy system, which provides structured mechanisms to constrain unwanted and unpredictable agent behavior without sacrificing generality or performance, but the other way around. CUGA as an open-source, enterprise-oriented agent supporting on-premises deployment, reflects the operational realities of organizations that cannot rely on third-party cloud infrastructure for sensitive workloads. Its strong benchmark performance across diverse agent evaluation settings (e.g., AppWorld (<a class="ltx_ref" href="#bib.bib8" title="">Trivedi et al., 2024</a>), WebArena (<a class="ltx_ref" href="#bib.bib10" title="">Zhou et al., 2023</a>), BPO-TA (<a class="ltx_ref" href="#bib.bib6" title="">Shlomov et al., 2026</a>)) and by our results in Section <a class="ltx_ref" href="#S4" title="4. Results ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">4</span></a>, further validates it as a credible and production-relevant baseline. These properties, combined with lessons drawn from prior work and companies’ use cases, informed both our design choices and our understanding of where policy enforcement is most needed. Ultimately, our policy system is a means to a broader end: the development of generalist agents that organizations can deploy with confidence.</p>
+</div>
+</section>
+<section class="ltx_bibliography" id="bib">
+<h2 class="ltx_title ltx_title_bibliography" id="source-heading-19">References</h2>
+<ul class="ltx_biblist" id="bib.L1">
+<li class="ltx_bibitem ltx_bib_article" id="bib.bib26"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Chen <span class="ltx_text ltx_bib_etal">et al.</span> (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">Z. Chen, M. Kang, and B. Li</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Shieldagent: shielding agents via verifiable safety policy reasoning</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2503.22738</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p1.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib17"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">CUGA Project (2026a)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">CUGA Project</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">CUGA: computer-using generalist agent</span>.
+</span>
+<span class="ltx_bibblock">Note: <span class="ltx_text ltx_bib_note"><a class="ltx_ref ltx_url ltx_font_typewriter" href="https://github.com/cuga-project/cuga-agent" title="">https://github.com/cuga-project/cuga-agent</a>Accessed: 2026-04-27</span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p3.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib18"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">CUGA Project (2026b)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">CUGA Project</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">OAK Bench: customer-care benchmark for insurance workflows</span>.
+</span>
+<span class="ltx_bibblock">Note: <span class="ltx_text ltx_bib_note"><a class="ltx_ref ltx_url ltx_font_typewriter" href="https://github.com/cuga-project/oak-bench" title="">https://github.com/cuga-project/oak-bench</a>Accessed: 2026-04-27</span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S4.p1.1" title="4. Results ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§4</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_article" id="bib.bib2"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Gaurav <span class="ltx_text ltx_bib_etal">et al.</span> (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">S. Gaurav, J. Heikkonen, and J. Chaudhary</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Governance-as-a-service: a multi-agent framework for ai system compliance and policy enforcement</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2508.18765</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p2.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_inproceedings" id="bib.bib3"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Hong <span class="ltx_text ltx_bib_etal">et al.</span> (2023)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">S. Hong, M. Zhuge, J. Chen, X. Zheng, Y. Cheng, J. Wang, C. Zhang, Z. Wang, S. K. S. Yau, Z. Lin, <span class="ltx_text ltx_bib_etal">et al.</span></span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">MetaGPT: meta programming for a multi-agent collaborative framework</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">The twelfth international conference on learning representations</span>,
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p2.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib19"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">IBM Research (2026)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">IBM Research</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">BPO-Bench: business process operations benchmark</span>.
+</span>
+<span class="ltx_bibblock">Note: <span class="ltx_text ltx_bib_note"><a class="ltx_ref ltx_url ltx_font_typewriter" href="https://huggingface.co/datasets/ibm-research/BPO-Bench" title="">https://huggingface.co/datasets/ibm-research/BPO-Bench</a>Accessed: 2026-04-27</span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S4.p1.1" title="4. Results ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§4</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_article" id="bib.bib25"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Jiang <span class="ltx_text ltx_bib_etal">et al.</span> (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">C. Jiang, X. Pan, and M. Yang</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Think twice before you act: enhancing agent behavioral safety with thought correction</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2505.11063</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p1.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_article" id="bib.bib15"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Levy <span class="ltx_text ltx_bib_etal">et al.</span> (2024)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">I. Levy, B. Wiesel, S. Marreed, A. Oved, A. Yaeli, and S. Shlomov</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">St-webagentbench: a benchmark for evaluating safety and trustworthiness in web agents</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2410.06703</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p1.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_article" id="bib.bib22"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Luo <span class="ltx_text ltx_bib_etal">et al.</span> (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">H. Luo, S. Dai, C. Ni, X. Li, G. Zhang, K. Wang, T. Liu, and H. Salam</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Agentauditor: human-level safety and security evaluation for llm agents</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2506.00641</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p1.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_article" id="bib.bib20"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Ma <span class="ltx_text ltx_bib_etal">et al.</span> (2026)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">X. Ma, Y. Gao, Y. Wang, R. Wang, X. Wang, Y. Sun, Y. Ding, H. Xu, Y. Chen, Y. Zhao, <span class="ltx_text ltx_bib_etal">et al.</span></span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Safety at scale: a comprehensive survey of large model and agent safety</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">Foundations and Trends in Privacy and Security</span> <span class="ltx_text ltx_bib_volume">8</span> (<span class="ltx_text ltx_bib_number">3-4</span>), <span class="ltx_text ltx_bib_pages">pp. 1–240</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p1.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_article" id="bib.bib5"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Marreed <span class="ltx_text ltx_bib_etal">et al.</span> (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">S. Marreed, A. Oved, A. Yaeli, S. Shlomov, I. Levy, O. Akrabi, A. Sela, A. Adi, and N. Mashkif</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Towards enterprise-ready computer using generalist agent</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2503.01861</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p3.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_inproceedings" id="bib.bib13"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Oved <span class="ltx_text ltx_bib_etal">et al.</span> (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">A. Oved, S. Shlomov, S. Zeltyn, N. Mashkif, and A. Yaeli</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">SNAP: semantic stories for next activity prediction</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">Proceedings of the AAAI Conference on Artificial Intelligence</span>,
+</span>
+<span class="ltx_bibblock">Vol. <span class="ltx_text ltx_bib_volume">39</span>, <span class="ltx_text ltx_bib_pages">pp. 28871–28877</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p1.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib9"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Parlant (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">Parlant</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Parlant: conversational control layer for customer-facing llm agents</span>.
+</span>
+<span class="ltx_bibblock">Note: <span class="ltx_text ltx_bib_note"><a class="ltx_ref ltx_url ltx_font_typewriter" href="https://parlant.io/" title="">https://parlant.io/</a> and <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://github.com/emcie-co/parlant" title="">https://github.com/emcie-co/parlant</a>Accessed March 2026</span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p2.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_article" id="bib.bib12"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Schwartz <span class="ltx_text ltx_bib_etal">et al.</span> (2023)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">S. Schwartz, A. Yaeli, and S. Shlomov</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Enhancing trust in llm-based ai automation agents: new considerations and future challenges</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2308.05391</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p1.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_article" id="bib.bib23"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Shi <span class="ltx_text ltx_bib_etal">et al.</span> (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">Y. Shi, W. Yu, J. Huang, W. Yao, W. Chen, and N. Liu</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Towards trustworthy gui agents: a survey</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2503.23434</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p1.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_inproceedings" id="bib.bib6"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Shlomov <span class="ltx_text ltx_bib_etal">et al.</span> (2026)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">S. Shlomov, A. Oved, S. Marreed, I. Levy, O. Akrabi, A. Yaeli, Ł. Strąk, E. Koumpan, Y. Goldshtein, E. Shapira, <span class="ltx_text ltx_bib_etal">et al.</span></span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">From benchmarks to business impact: deploying ibm generalist agent in enterprise production</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">Proceedings of the AAAI Conference on Artificial Intelligence</span>,
+</span>
+<span class="ltx_bibblock">Vol. <span class="ltx_text ltx_bib_volume">40</span>, <span class="ltx_text ltx_bib_pages">pp. 40423–40431</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p3.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>,
+<a class="ltx_ref" href="#S5.p1.1" title="5. Conclusion - Our Vision ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§5</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_inproceedings" id="bib.bib14"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Shlomov <span class="ltx_text ltx_bib_etal">et al.</span> (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">S. Shlomov, B. Wiesel, A. Sela, I. Levy, L. Galanti, and R. Abitbol</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">From grounding to planning: benchmarking bottlenecks in web agents</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">ECAI 2025 – 28th European Conference on Artificial Intelligence</span>,
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_series">Frontiers in Artificial Intelligence and Applications</span>, Vol. <span class="ltx_text ltx_bib_volume">413</span>, <span class="ltx_text ltx_bib_pages">pp. 4815–4822</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text ltx_bib_external">2409.01927</span></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p1.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_inproceedings" id="bib.bib8"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Trivedi <span class="ltx_text ltx_bib_etal">et al.</span> (2024)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">H. Trivedi, T. Khot, M. Hartmann, R. Manku, V. Dong, E. Li, S. Gupta, A. Sabharwal, and N. Balasubramanian</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Appworld: a controllable world of apps and people for benchmarking interactive coding agents</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)</span>,
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_pages">pp. 16022–16076</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S5.p1.1" title="5. Conclusion - Our Vision ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§5</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_inproceedings" id="bib.bib1"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Tsai and Bagdasarian (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">L. Tsai and E. Bagdasarian</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Contextual agent security: a policy for every purpose</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">Proceedings of the 2025 Workshop on Hot Topics in Operating Systems</span>,
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_pages">pp. 8–17</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p2.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_article" id="bib.bib7"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Wang <span class="ltx_text ltx_bib_etal">et al.</span> (2020)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">W. Wang, F. Wei, L. Dong, H. Bao, N. Yang, and M. Zhou</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Minilm: deep self-attention distillation for task-agnostic compression of pre-trained transformers</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">Advances in neural information processing systems</span> <span class="ltx_text ltx_bib_volume">33</span>, <span class="ltx_text ltx_bib_pages">pp. 5776–5788</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S2.SS1.SSS0.Px1.p3.1" title="Trigger System. ‣ 2.1. Policy System Architecture ‣ 2. Methods Overview ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§2.1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_inproceedings" id="bib.bib16"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Yaeli <span class="ltx_text ltx_bib_etal">et al.</span> (2022)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">A. Yaeli, S. Shlomov, A. Oved, S. Zeltyn, and N. Mashkif</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Recommending next best skill in conversational robotic process automation</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">International Conference on Business Process Management</span>,
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_pages">pp. 215–230</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p1.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_article" id="bib.bib21"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Yang <span class="ltx_text ltx_bib_etal">et al.</span> (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">X. Yang, J. Chen, J. Luo, Z. Fang, Y. Dong, H. Su, and J. Zhu</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Mla-trust: benchmarking trustworthiness of multimodal llm agents in gui environments</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2506.01616</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p1.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_article" id="bib.bib24"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Ying <span class="ltx_text ltx_bib_etal">et al.</span> (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">Z. Ying, Y. Shao, J. Gan, G. Xu, W. Zhang, Q. Zou, J. Shi, Z. Yin, M. Zhang, A. Liu, <span class="ltx_text ltx_bib_etal">et al.</span></span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Securewebarena: a holistic security evaluation benchmark for lvlm-based web agents</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2510.10073</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p1.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_article" id="bib.bib11"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Zeltyn <span class="ltx_text ltx_bib_etal">et al.</span> (2022)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">S. Zeltyn, S. Shlomov, A. Yaeli, and A. Oved</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Prescriptive process monitoring in intelligent process automation with chatbot orchestration</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2212.06564</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p1.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_article" id="bib.bib10"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Zhou <span class="ltx_text ltx_bib_etal">et al.</span> (2023)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">S. Zhou, F. F. Xu, H. Zhu, X. Zhou, R. Lo, A. Sridhar, X. Cheng, T. Ou, Y. Bisk, D. Fried, <span class="ltx_text ltx_bib_etal">et al.</span></span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Webarena: a realistic web environment for building autonomous agents</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2307.13854</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S5.p1.1" title="5. Conclusion - Our Vision ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§5</span></a>.
+</span></li>
+<li class="ltx_bibitem ltx_bib_inproceedings" id="bib.bib4"><span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Zwerdling <span class="ltx_text ltx_bib_etal">et al.</span> (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_author">N. Zwerdling, D. Boaz, E. Rabinovich, G. Uziel, D. Amid, and A. A. Tavor</span>
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Towards enforcing company policy adherence in agentic workflows</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: Industry Track</span>,
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_pages">pp. 595–606</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="#S1.p2.1" title="1. Introduction ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span></li>
+</ul>
+</section>
+<section class="ltx_appendix" id="A1">
+<h2 class="ltx_title ltx_title_appendix" id="source-heading-20"><span class="ltx_tag ltx_tag_appendix">Appendix A </span>Ablation Study: BPO Benchmark</h2>
+<div class="ltx_para" id="A1.p1">
+<p class="ltx_p" id="A1.p1.1">This appendix provides the complete experimental results for the CUGA policy
+evaluation on the BPO benchmark, including per-run statistics, all metric
+breakdowns, per-task pass rates, and descriptions of each implemented policy.</p>
+</div>
+<section class="ltx_subsection" id="A1.SS1">
+<h3 class="ltx_title ltx_title_subsection" id="source-heading-21"><span class="ltx_tag ltx_tag_subsection">A.1. </span>Aggregate Results Across Policy Configurations</h3>
+<div class="ltx_para" id="A1.SS1.p1">
+<p class="ltx_p" id="A1.SS1.p1.1">Each configuration was evaluated over three independent runs on a clean Milvus
+database. Table <a class="ltx_ref" href="#A1.T2" title="Table 2 ‣ A.1. Aggregate Results Across Policy Configurations ‣ Appendix A Ablation Study: BPO Benchmark ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">2</span></a> reports per-run scores and summary statistics.</p>
+</div>
+<figure class="ltx_table" id="A1.T2">
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle" id="A1.T2.2">
+<thead class="ltx_thead">
+<tr class="ltx_tr" id="A1.T2.2.1">
+<th class="ltx_td ltx_th ltx_th_row ltx_border_tt" id="A1.T2.2.1.1"></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="A1.T2.2.1.2"><span class="ltx_text ltx_font_bold" id="A1.T2.2.1.2.1">No Policies</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="A1.T2.2.1.3"><span class="ltx_text ltx_font_bold" id="A1.T2.2.1.3.1">2 Policies</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="A1.T2.2.1.4"><span class="ltx_text ltx_font_bold" id="A1.T2.2.1.4.1">5 Policies</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr" id="A1.T2.2.2">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" id="A1.T2.2.2.1">Run 1</th>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T2.2.2.2">11/26 (42.3%)</td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T2.2.2.3">19/26 (73.1%)</td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T2.2.2.4">20/26 (76.9%)</td></tr>
+<tr class="ltx_tr" id="A1.T2.2.3">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row" id="A1.T2.2.3.1">Run 2</th>
+<td class="ltx_td ltx_align_center" id="A1.T2.2.3.2">13/26 (50.0%)</td>
+<td class="ltx_td ltx_align_center" id="A1.T2.2.3.3">18/26 (69.2%)</td>
+<td class="ltx_td ltx_align_center" id="A1.T2.2.3.4">20/26 (76.9%)</td></tr>
+<tr class="ltx_tr" id="A1.T2.2.4">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row" id="A1.T2.2.4.1">Run 3</th>
+<td class="ltx_td ltx_align_center" id="A1.T2.2.4.2">12/26 (46.2%)</td>
+<td class="ltx_td ltx_align_center" id="A1.T2.2.4.3">19/26 (73.1%)</td>
+<td class="ltx_td ltx_align_center" id="A1.T2.2.4.4">21/26 (80.8%)</td></tr>
+<tr class="ltx_tr" id="A1.T2.2.5">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" id="A1.T2.2.5.1">Mean</th>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T2.2.5.2">12.0/26 (46.2%)</td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T2.2.5.3">18.7/26 (71.8%)</td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T2.2.5.4">20.3/26 (78.2%)</td></tr>
+<tr class="ltx_tr" id="A1.T2.2.6">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row" id="A1.T2.2.6.1">Std. Dev.</th>
+<td class="ltx_td ltx_align_center" id="A1.T2.2.6.2">1.0</td>
+<td class="ltx_td ltx_align_center" id="A1.T2.2.6.3">0.6</td>
+<td class="ltx_td ltx_align_center" id="A1.T2.2.6.4">0.6</td></tr>
+<tr class="ltx_tr" id="A1.T2.2.7">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb" id="A1.T2.2.7.1">Range</th>
+<td class="ltx_td ltx_align_center ltx_border_bb" id="A1.T2.2.7.2">11–13</td>
+<td class="ltx_td ltx_align_center ltx_border_bb" id="A1.T2.2.7.3">18–19</td>
+<td class="ltx_td ltx_align_center ltx_border_bb" id="A1.T2.2.7.4">20–21</td></tr>
+</tbody>
+</table></div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table">Table 2. </span>Per-run scores for each policy configuration (out of 26 tasks).</figcaption>
+</figure>
+<div class="ltx_para" id="A1.SS1.p2">
+<p class="ltx_p" id="A1.SS1.p2.1">Table <a class="ltx_ref" href="#A1.T3" title="Table 3 ‣ A.1. Aggregate Results Across Policy Configurations ‣ Appendix A Ablation Study: BPO Benchmark ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">3</span></a> summarizes all evaluation metrics across
+configurations, with the total improvement from no-policy to five-policy
+baseline.</p>
+</div>
+<figure class="ltx_table" id="A1.T3">
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle" id="A1.T3.2">
+<thead class="ltx_thead">
+<tr class="ltx_tr" id="A1.T3.2.1">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt" id="A1.T3.2.1.1"><span class="ltx_text ltx_font_bold" id="A1.T3.2.1.1.1">Metric</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="A1.T3.2.1.2"><span class="ltx_text ltx_font_bold" id="A1.T3.2.1.2.1">No Policies</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="A1.T3.2.1.3"><span class="ltx_text ltx_font_bold" id="A1.T3.2.1.3.1">2 Policies</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="A1.T3.2.1.4"><span class="ltx_text ltx_font_bold" id="A1.T3.2.1.4.1">5 Policies</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="A1.T3.2.1.5"><math alttext="\Delta" class="ltx_Math" display="inline" id="A1.T3.m1"><semantics><mi>Δ</mi><annotation encoding="application/x-tex">\Delta</annotation></semantics></math><span class="ltx_text ltx_font_bold" id="A1.T3.2.1.5.1"> Total</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr" id="A1.T3.2.2">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" id="A1.T3.2.2.1">Final score</th>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T3.2.2.2">12.0/26 (46.2%)</td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T3.2.2.3">18.7/26 (71.8%)</td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T3.2.2.4">20.3/26 (78.2%)</td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T3.2.2.5">+32.0 pp</td></tr>
+<tr class="ltx_tr" id="A1.T3.2.3">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row" id="A1.T3.2.3.1">Avg. similarity</th>
+<td class="ltx_td ltx_align_center" id="A1.T3.2.3.2">0.539</td>
+<td class="ltx_td ltx_align_center" id="A1.T3.2.3.3">0.602</td>
+<td class="ltx_td ltx_align_center" id="A1.T3.2.3.4">0.643</td>
+<td class="ltx_td ltx_align_center" id="A1.T3.2.3.5">+0.104</td></tr>
+<tr class="ltx_tr" id="A1.T3.2.4">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row" id="A1.T3.2.4.1">Keyword match</th>
+<td class="ltx_td ltx_align_center" id="A1.T3.2.4.2">57.5%</td>
+<td class="ltx_td ltx_align_center" id="A1.T3.2.4.3">73.1%</td>
+<td class="ltx_td ltx_align_center" id="A1.T3.2.4.4">76.0%</td>
+<td class="ltx_td ltx_align_center" id="A1.T3.2.4.5">+18.5 pp</td></tr>
+<tr class="ltx_tr" id="A1.T3.2.5">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row" id="A1.T3.2.5.1">LLM judge (avg)</th>
+<td class="ltx_td ltx_align_center" id="A1.T3.2.5.2">0.517</td>
+<td class="ltx_td ltx_align_center" id="A1.T3.2.5.3">0.742</td>
+<td class="ltx_td ltx_align_center" id="A1.T3.2.5.4">0.824</td>
+<td class="ltx_td ltx_align_center" id="A1.T3.2.5.5">+0.307</td></tr>
+<tr class="ltx_tr" id="A1.T3.2.6">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row" id="A1.T3.2.6.1">LLM judge (binary)</th>
+<td class="ltx_td ltx_align_center" id="A1.T3.2.6.2">52.6%</td>
+<td class="ltx_td ltx_align_center" id="A1.T3.2.6.3">78.2%</td>
+<td class="ltx_td ltx_align_center" id="A1.T3.2.6.4">88.5%</td>
+<td class="ltx_td ltx_align_center" id="A1.T3.2.6.5">+35.9 pp</td></tr>
+<tr class="ltx_tr" id="A1.T3.2.7">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb" id="A1.T3.2.7.1">API accuracy</th>
+<td class="ltx_td ltx_align_center ltx_border_bb" id="A1.T3.2.7.2">50.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_bb" id="A1.T3.2.7.3">66.7%</td>
+<td class="ltx_td ltx_align_center ltx_border_bb" id="A1.T3.2.7.4">73.1%</td>
+<td class="ltx_td ltx_align_center ltx_border_bb" id="A1.T3.2.7.5">+23.1 pp</td></tr>
+</tbody>
+</table></div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table">Table 3. </span>Evaluation metrics by policy configuration.</figcaption>
+</figure>
+</section>
+<section class="ltx_subsection" id="A1.SS2">
+<h3 class="ltx_title ltx_title_subsection" id="source-heading-22"><span class="ltx_tag ltx_tag_subsection">A.2. </span>Per-Task Breakdown</h3>
+<div class="ltx_para" id="A1.SS2.p1">
+<p class="ltx_p" id="A1.SS2.p1.1">Table <a class="ltx_ref" href="#A1.T4" title="Table 4 ‣ A.2. Per-Task Breakdown ‣ Appendix A Ablation Study: BPO Benchmark ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">4</span></a> reports pass counts (out of 3 runs) for each task
+across the three configurations, together with the net improvement and task
+category.</p>
+</div>
+<figure class="ltx_table" id="A1.T4">
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle" id="A1.T4.2">
+<thead class="ltx_thead">
+<tr class="ltx_tr" id="A1.T4.2.1">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="A1.T4.2.1.1"><span class="ltx_text ltx_font_bold" id="A1.T4.2.1.1.1">Task</span></th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt" id="A1.T4.2.1.2"><span class="ltx_text ltx_font_bold" id="A1.T4.2.1.2.1">Category</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="A1.T4.2.1.3"><span class="ltx_text ltx_font_bold" id="A1.T4.2.1.3.1">No Pol.</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="A1.T4.2.1.4"><span class="ltx_text ltx_font_bold" id="A1.T4.2.1.4.1">2 Pol.</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="A1.T4.2.1.5"><span class="ltx_text ltx_font_bold" id="A1.T4.2.1.5.1">5 Pol.</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="A1.T4.2.1.6"><math alttext="\Delta" class="ltx_Math" display="inline" id="A1.T4.m1"><semantics><mi>Δ</mi><annotation encoding="application/x-tex">\Delta</annotation></semantics></math></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr" id="A1.T4.2.2">
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T4.2.2.1"><span class="ltx_text" id="A1.T4.2.2.1.1">1</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t" id="A1.T4.2.2.2"><span class="ltx_text" id="A1.T4.2.2.2.1">Stable pass</span></td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T4.2.2.3"><span class="ltx_text" id="A1.T4.2.2.3.1">3/3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T4.2.2.4"><span class="ltx_text" id="A1.T4.2.2.4.1">3/3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T4.2.2.5"><span class="ltx_text" id="A1.T4.2.2.5.1">3/3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T4.2.2.6"><span class="ltx_text" id="A1.T4.2.2.6.1">+0</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.3">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.3.1"><span class="ltx_text" id="A1.T4.2.3.1.1">2</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.3.2"><span class="ltx_text" id="A1.T4.2.3.2.1">Stable pass</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.3.3"><span class="ltx_text" id="A1.T4.2.3.3.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.3.4"><span class="ltx_text" id="A1.T4.2.3.4.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.3.5"><span class="ltx_text" id="A1.T4.2.3.5.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.3.6"><span class="ltx_text" id="A1.T4.2.3.6.1">+0</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.4">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.4.1"><span class="ltx_text" id="A1.T4.2.4.1.1">3</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.4.2"><span class="ltx_text" id="A1.T4.2.4.2.1">Stable fail</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.4.3"><span class="ltx_text" id="A1.T4.2.4.3.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.4.4"><span class="ltx_text" id="A1.T4.2.4.4.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.4.5"><span class="ltx_text" id="A1.T4.2.4.5.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.4.6"><span class="ltx_text" id="A1.T4.2.4.6.1">+0</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.5">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.5.1"><span class="ltx_text" id="A1.T4.2.5.1.1">4</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.5.2"><span class="ltx_text" id="A1.T4.2.5.2.1">Stable pass</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.5.3"><span class="ltx_text" id="A1.T4.2.5.3.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.5.4"><span class="ltx_text" id="A1.T4.2.5.4.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.5.5"><span class="ltx_text" id="A1.T4.2.5.5.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.5.6"><span class="ltx_text" id="A1.T4.2.5.6.1">+0</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.6">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.6.1"><span class="ltx_text" id="A1.T4.2.6.1.1">5</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.6.2"><span class="ltx_text" id="A1.T4.2.6.2.1">Stable pass</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.6.3"><span class="ltx_text" id="A1.T4.2.6.3.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.6.4"><span class="ltx_text" id="A1.T4.2.6.4.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.6.5"><span class="ltx_text" id="A1.T4.2.6.5.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.6.6"><span class="ltx_text" id="A1.T4.2.6.6.1">+0</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.7">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.7.1"><span class="ltx_text" id="A1.T4.2.7.1.1">6</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.7.2"><span class="ltx_text" id="A1.T4.2.7.2.1">Stable fail</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.7.3"><span class="ltx_text" id="A1.T4.2.7.3.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.7.4"><span class="ltx_text" id="A1.T4.2.7.4.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.7.5"><span class="ltx_text" id="A1.T4.2.7.5.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.7.6"><span class="ltx_text" id="A1.T4.2.7.6.1">+0</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.8">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.8.1"><span class="ltx_text" id="A1.T4.2.8.1.1">7</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.8.2"><span class="ltx_text" id="A1.T4.2.8.2.1">Stable fail</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.8.3"><span class="ltx_text" id="A1.T4.2.8.3.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.8.4"><span class="ltx_text" id="A1.T4.2.8.4.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.8.5"><span class="ltx_text" id="A1.T4.2.8.5.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.8.6"><span class="ltx_text" id="A1.T4.2.8.6.1">+0</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.9">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.9.1"><span class="ltx_text" id="A1.T4.2.9.1.1">8</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.9.2"><span class="ltx_text" id="A1.T4.2.9.2.1">Stable pass</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.9.3"><span class="ltx_text" id="A1.T4.2.9.3.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.9.4"><span class="ltx_text" id="A1.T4.2.9.4.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.9.5"><span class="ltx_text" id="A1.T4.2.9.5.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.9.6"><span class="ltx_text" id="A1.T4.2.9.6.1">+0</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.10">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.10.1"><span class="ltx_text" id="A1.T4.2.10.1.1">9</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.10.2"><span class="ltx_text" id="A1.T4.2.10.2.1">Improved (Policy #3)</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.10.3"><span class="ltx_text" id="A1.T4.2.10.3.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.10.4"><span class="ltx_text" id="A1.T4.2.10.4.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.10.5"><span class="ltx_text" id="A1.T4.2.10.5.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.10.6"><span class="ltx_text" id="A1.T4.2.10.6.1">+3</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.11">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.11.1"><span class="ltx_text" id="A1.T4.2.11.1.1">10</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.11.2"><span class="ltx_text" id="A1.T4.2.11.2.1">Stable pass</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.11.3"><span class="ltx_text" id="A1.T4.2.11.3.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.11.4"><span class="ltx_text" id="A1.T4.2.11.4.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.11.5"><span class="ltx_text" id="A1.T4.2.11.5.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.11.6"><span class="ltx_text" id="A1.T4.2.11.6.1">+0</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.12">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.12.1"><span class="ltx_text" id="A1.T4.2.12.1.1">11</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.12.2"><span class="ltx_text" id="A1.T4.2.12.2.1">Stable pass</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.12.3"><span class="ltx_text" id="A1.T4.2.12.3.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.12.4"><span class="ltx_text" id="A1.T4.2.12.4.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.12.5"><span class="ltx_text" id="A1.T4.2.12.5.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.12.6"><span class="ltx_text" id="A1.T4.2.12.6.1">+0</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.13">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.13.1"><span class="ltx_text" id="A1.T4.2.13.1.1">12</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.13.2"><span class="ltx_text" id="A1.T4.2.13.2.1">Flaky</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.13.3"><span class="ltx_text" id="A1.T4.2.13.3.1">2/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.13.4"><span class="ltx_text" id="A1.T4.2.13.4.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.13.5"><span class="ltx_text" id="A1.T4.2.13.5.1">2/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.13.6"><span class="ltx_text" id="A1.T4.2.13.6.1">+0</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.14">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.14.1"><span class="ltx_text" id="A1.T4.2.14.1.1">13</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.14.2"><span class="ltx_text" id="A1.T4.2.14.2.1">Stable pass</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.14.3"><span class="ltx_text" id="A1.T4.2.14.3.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.14.4"><span class="ltx_text" id="A1.T4.2.14.4.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.14.5"><span class="ltx_text" id="A1.T4.2.14.5.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.14.6"><span class="ltx_text" id="A1.T4.2.14.6.1">+0</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.15">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.15.1"><span class="ltx_text" id="A1.T4.2.15.1.1">14</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.15.2"><span class="ltx_text" id="A1.T4.2.15.2.1">Improved (Policy #2)</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.15.3"><span class="ltx_text" id="A1.T4.2.15.3.1">2/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.15.4"><span class="ltx_text" id="A1.T4.2.15.4.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.15.5"><span class="ltx_text" id="A1.T4.2.15.5.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.15.6"><span class="ltx_text" id="A1.T4.2.15.6.1">+1</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.16">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.16.1"><span class="ltx_text" id="A1.T4.2.16.1.1">15</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.16.2"><span class="ltx_text" id="A1.T4.2.16.2.1">Stable fail</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.16.3"><span class="ltx_text" id="A1.T4.2.16.3.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.16.4"><span class="ltx_text" id="A1.T4.2.16.4.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.16.5"><span class="ltx_text" id="A1.T4.2.16.5.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.16.6"><span class="ltx_text" id="A1.T4.2.16.6.1">+0</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.17">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.17.1"><span class="ltx_text" id="A1.T4.2.17.1.1">16</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.17.2"><span class="ltx_text" id="A1.T4.2.17.2.1">Improved (Policy #1)</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.17.3"><span class="ltx_text" id="A1.T4.2.17.3.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.17.4"><span class="ltx_text" id="A1.T4.2.17.4.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.17.5"><span class="ltx_text" id="A1.T4.2.17.5.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.17.6"><span class="ltx_text" id="A1.T4.2.17.6.1">+3</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.18">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.18.1"><span class="ltx_text" id="A1.T4.2.18.1.1">17</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.18.2"><span class="ltx_text" id="A1.T4.2.18.2.1">Stable pass</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.18.3"><span class="ltx_text" id="A1.T4.2.18.3.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.18.4"><span class="ltx_text" id="A1.T4.2.18.4.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.18.5"><span class="ltx_text" id="A1.T4.2.18.5.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.18.6"><span class="ltx_text" id="A1.T4.2.18.6.1">+0</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.19">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.19.1"><span class="ltx_text" id="A1.T4.2.19.1.1">18</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.19.2"><span class="ltx_text" id="A1.T4.2.19.2.1">Improved (Policy #2)</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.19.3"><span class="ltx_text" id="A1.T4.2.19.3.1">2/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.19.4"><span class="ltx_text" id="A1.T4.2.19.4.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.19.5"><span class="ltx_text" id="A1.T4.2.19.5.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.19.6"><span class="ltx_text" id="A1.T4.2.19.6.1">+1</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.20">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.20.1"><span class="ltx_text" id="A1.T4.2.20.1.1">19</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.20.2"><span class="ltx_text" id="A1.T4.2.20.2.1">Improved (Policy #1)</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.20.3"><span class="ltx_text" id="A1.T4.2.20.3.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.20.4"><span class="ltx_text" id="A1.T4.2.20.4.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.20.5"><span class="ltx_text" id="A1.T4.2.20.5.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.20.6"><span class="ltx_text" id="A1.T4.2.20.6.1">+3</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.21">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.21.1"><span class="ltx_text" id="A1.T4.2.21.1.1">20</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.21.2"><span class="ltx_text" id="A1.T4.2.21.2.1">Stable pass</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.21.3"><span class="ltx_text" id="A1.T4.2.21.3.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.21.4"><span class="ltx_text" id="A1.T4.2.21.4.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.21.5"><span class="ltx_text" id="A1.T4.2.21.5.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.21.6"><span class="ltx_text" id="A1.T4.2.21.6.1">+0</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.22">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.22.1"><span class="ltx_text" id="A1.T4.2.22.1.1">21</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.22.2"><span class="ltx_text" id="A1.T4.2.22.2.1">Improved (Policy #1)</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.22.3"><span class="ltx_text" id="A1.T4.2.22.3.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.22.4"><span class="ltx_text" id="A1.T4.2.22.4.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.22.5"><span class="ltx_text" id="A1.T4.2.22.5.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.22.6"><span class="ltx_text" id="A1.T4.2.22.6.1">+3</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.23">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.23.1"><span class="ltx_text" id="A1.T4.2.23.1.1">22</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.23.2"><span class="ltx_text" id="A1.T4.2.23.2.1">Improved (Policy #1)</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.23.3"><span class="ltx_text" id="A1.T4.2.23.3.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.23.4"><span class="ltx_text" id="A1.T4.2.23.4.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.23.5"><span class="ltx_text" id="A1.T4.2.23.5.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.23.6"><span class="ltx_text" id="A1.T4.2.23.6.1">+3</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.24">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.24.1"><span class="ltx_text" id="A1.T4.2.24.1.1">23</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.24.2"><span class="ltx_text" id="A1.T4.2.24.2.1">Improved (Policy #1)</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.24.3"><span class="ltx_text" id="A1.T4.2.24.3.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.24.4"><span class="ltx_text" id="A1.T4.2.24.4.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.24.5"><span class="ltx_text" id="A1.T4.2.24.5.1">3/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.24.6"><span class="ltx_text" id="A1.T4.2.24.6.1">+3</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.25">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.25.1"><span class="ltx_text" id="A1.T4.2.25.1.1">24</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.25.2"><span class="ltx_text" id="A1.T4.2.25.2.1">Improved (Policy #1/#2, partial)</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.25.3"><span class="ltx_text" id="A1.T4.2.25.3.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.25.4"><span class="ltx_text" id="A1.T4.2.25.4.1">1/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.25.5"><span class="ltx_text" id="A1.T4.2.25.5.1">2/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.25.6"><span class="ltx_text" id="A1.T4.2.25.6.1">+2</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.26">
+<td class="ltx_td ltx_align_center" id="A1.T4.2.26.1"><span class="ltx_text" id="A1.T4.2.26.1.1">25</span></td>
+<td class="ltx_td ltx_align_left" id="A1.T4.2.26.2"><span class="ltx_text" id="A1.T4.2.26.2.1">Stable fail</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.26.3"><span class="ltx_text" id="A1.T4.2.26.3.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.26.4"><span class="ltx_text" id="A1.T4.2.26.4.1">1/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.26.5"><span class="ltx_text" id="A1.T4.2.26.5.1">0/3</span></td>
+<td class="ltx_td ltx_align_center" id="A1.T4.2.26.6"><span class="ltx_text" id="A1.T4.2.26.6.1">+0</span></td></tr>
+<tr class="ltx_tr" id="A1.T4.2.27">
+<td class="ltx_td ltx_align_center ltx_border_bb" id="A1.T4.2.27.1"><span class="ltx_text" id="A1.T4.2.27.1.1">26</span></td>
+<td class="ltx_td ltx_align_left ltx_border_bb" id="A1.T4.2.27.2"><span class="ltx_text" id="A1.T4.2.27.2.1">Improved (Policy #4)</span></td>
+<td class="ltx_td ltx_align_center ltx_border_bb" id="A1.T4.2.27.3"><span class="ltx_text" id="A1.T4.2.27.3.1">0/3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_bb" id="A1.T4.2.27.4"><span class="ltx_text" id="A1.T4.2.27.4.1">0/3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_bb" id="A1.T4.2.27.5"><span class="ltx_text" id="A1.T4.2.27.5.1">3/3</span></td>
+<td class="ltx_td ltx_align_center ltx_border_bb" id="A1.T4.2.27.6"><span class="ltx_text" id="A1.T4.2.27.6.1">+3</span></td></tr>
+</tbody>
+</table></div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table">Table 4. </span>Per-task pass rates across policy configurations.</figcaption>
+</figure>
+</section>
+<section class="ltx_subsection" id="A1.SS3">
+<h3 class="ltx_title ltx_title_subsection" id="source-heading-23"><span class="ltx_tag ltx_tag_subsection">A.3. </span>Policy Descriptions</h3>
+<div class="ltx_para" id="A1.SS3.p1">
+<p class="ltx_p" id="A1.SS3.p1.1">The five implemented policies are described below in order of application.</p>
+</div>
+<section class="ltx_paragraph" id="A1.SS3.SSS0.Px1">
+<h4 class="ltx_title ltx_font_bold ltx_title_paragraph" id="source-heading-24">Policy #1 — API Capability Boundaries</h4>
+<div class="ltx_para" id="A1.SS3.SSS0.Px1.p1">
+<p class="ltx_p" id="A1.SS3.SSS0.Px1.p1.1"><span class="ltx_text ltx_font_italic" id="A1.SS3.SSS0.Px1.p1.1.1">Type: Playbook.
+Trigger: keywords + natural language (threshold 0.65, priority 90).</span></p>
+</div>
+<div class="ltx_para" id="A1.SS3.SSS0.Px1.p2">
+<p class="ltx_p" id="A1.SS3.SSS0.Px1.p2.1">This policy teaches the agent to recognise when no available API can answer a
+query. It enumerates supported and unsupported API capabilities and instructs
+the agent to decline out-of-scope requests directly, rather than soliciting a
+requisition ID or invoking irrelevant tools.</p>
+</div>
+<div class="ltx_para" id="A1.SS3.SSS0.Px1.p3">
+<p class="ltx_p" id="A1.SS3.SSS0.Px1.p3.1"><span class="ltx_text ltx_font_bold" id="A1.SS3.SSS0.Px1.p3.1.1">Failure pattern addressed.</span> Without this policy the agent would request
+a requisition ID, or call arbitrary APIs, for queries relating to job
+descriptions, time-to-fill, geography filtering, SLA deadlines, funnel timing,
+and job-card details — none of which are supported by any API.</p>
+</div>
+<div class="ltx_para" id="A1.SS3.SSS0.Px1.p4">
+<p class="ltx_p" id="A1.SS3.SSS0.Px1.p4.1"><span class="ltx_text ltx_font_bold" id="A1.SS3.SSS0.Px1.p4.1.1">Tasks fixed.</span> 16, 19, 21, 22, 23 (all from 0/3 to 3/3).</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="A1.SS3.SSS0.Px2">
+<h4 class="ltx_title ltx_font_bold ltx_title_paragraph" id="source-heading-25">Policy #2 — Error-Prone Tool Warnings</h4>
+<div class="ltx_para" id="A1.SS3.SSS0.Px2.p1">
+<p class="ltx_p" id="A1.SS3.SSS0.Px2.p1.1"><span class="ltx_text ltx_font_italic" id="A1.SS3.SSS0.Px2.p1.1.1">Type: Tool Guide.
+Target: 19 error-prone tools (warning prepended to each description).</span></p>
+</div>
+<div class="ltx_para" id="A1.SS3.SSS0.Px2.p2">
+<p class="ltx_p" id="A1.SS3.SSS0.Px2.p2.1">This policy prepends a warning to the descriptions of the 19 known-unreliable
+tools (those returning 503 errors, schema violations, or type mismatches). It
+steers the agent towards the 13 reliable core tools and teaches graceful
+recovery when an error tool is nonetheless invoked.</p>
+</div>
+<div class="ltx_para" id="A1.SS3.SSS0.Px2.p3">
+<p class="ltx_p" id="A1.SS3.SSS0.Px2.p3.1"><span class="ltx_text ltx_font_bold" id="A1.SS3.SSS0.Px2.p3.1.1">Failure pattern addressed.</span> The agent would call tools such as
+<span class="ltx_text ltx_font_typewriter" id="A1.SS3.SSS0.Px2.p3.1.2">funnel_status</span> (503 error), <span class="ltx_text ltx_font_typewriter" id="A1.SS3.SSS0.Px2.p3.1.3">model_registry</span> (incorrect data),
+or <span class="ltx_text ltx_font_typewriter" id="A1.SS3.SSS0.Px2.p3.1.4">source_recommendation_summary</span> (incomplete shortcut) instead of
+the correct granular APIs.</p>
+</div>
+<div class="ltx_para" id="A1.SS3.SSS0.Px2.p4">
+<p class="ltx_p" id="A1.SS3.SSS0.Px2.p4.1"><span class="ltx_text ltx_font_bold" id="A1.SS3.SSS0.Px2.p4.1.1">Tasks fixed.</span> 12, 14, 18 (stabilised from 2/3 to 3/3); 24 (0/3 to
+1–2/3, partial improvement).</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="A1.SS3.SSS0.Px3">
+<h4 class="ltx_title ltx_font_bold ltx_title_paragraph" id="source-heading-26">Policy #3 — Multi-API Reasoning</h4>
+<div class="ltx_para" id="A1.SS3.SSS0.Px3.p1">
+<p class="ltx_p" id="A1.SS3.SSS0.Px3.p1.1"><span class="ltx_text ltx_font_italic" id="A1.SS3.SSS0.Px3.p1.1.1">Type: Playbook.
+Trigger: keywords + natural language (threshold 0.65, priority 80).</span></p>
+</div>
+<div class="ltx_para" id="A1.SS3.SSS0.Px3.p2">
+<p class="ltx_p" id="A1.SS3.SSS0.Px3.p2.1">This policy instructs the agent to call multiple specific APIs for multi-metric
+questions rather than relying on a single summary endpoint. It provides an
+explicit mapping from question type to the correct tool and clarifies the
+distinction between “total requisitions used for computation”
+(<span class="ltx_text ltx_font_typewriter" id="A1.SS3.SSS0.Px3.p2.1.1">definitions-and-methodology</span>) and “similar requisitions analysed”
+(<span class="ltx_text ltx_font_typewriter" id="A1.SS3.SSS0.Px3.p2.1.2">metadata-and-timeframe</span>).</p>
+</div>
+<div class="ltx_para" id="A1.SS3.SSS0.Px3.p3">
+<p class="ltx_p" id="A1.SS3.SSS0.Px3.p3.1"><span class="ltx_text ltx_font_bold" id="A1.SS3.SSS0.Px3.p3.1.1">Failure pattern addressed.</span> The agent would use the summary shortcut
+tool for multi-metric queries, or confuse which endpoint returns the requisition
+count.</p>
+</div>
+<div class="ltx_para" id="A1.SS3.SSS0.Px3.p4">
+<p class="ltx_p" id="A1.SS3.SSS0.Px3.p4.1"><span class="ltx_text ltx_font_bold" id="A1.SS3.SSS0.Px3.p4.1.1">Tasks fixed.</span> 9 (0/3 to 3/3; agent now correctly returns 1047 from
+<span class="ltx_text ltx_font_typewriter" id="A1.SS3.SSS0.Px3.p4.1.2">definitions-and-methodology</span> rather than 40 from metadata-and-timeframe).</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="A1.SS3.SSS0.Px4">
+<h4 class="ltx_title ltx_font_bold ltx_title_paragraph" id="source-heading-27">Policy #4 — Average vs. Total Calculations</h4>
+<div class="ltx_para" id="A1.SS3.SSS0.Px4.p1">
+<p class="ltx_p" id="A1.SS3.SSS0.Px4.p1.1"><span class="ltx_text ltx_font_italic" id="A1.SS3.SSS0.Px4.p1.1.1">Type: Playbook.
+Trigger: keywords + natural language (threshold 0.65, priority 70).</span></p>
+</div>
+<div class="ltx_para" id="A1.SS3.SSS0.Px4.p2">
+<p class="ltx_p" id="A1.SS3.SSS0.Px4.p2.1">This policy teaches the agent that when a user asks for “average” or
+“typical” values it must compute a per-requisition average by dividing the
+aggregate total by the count of similar requisitions, rather than returning the
+raw total.</p>
+</div>
+<div class="ltx_para" id="A1.SS3.SSS0.Px4.p3">
+<p class="ltx_p" id="A1.SS3.SSS0.Px4.p3.1"><span class="ltx_text ltx_font_bold" id="A1.SS3.SSS0.Px4.p3.1.1">Failure pattern addressed.</span> The agent would return the total candidate
+count (2,913) when asked “how many candidates do we usually get?” instead of
+computing the per-requisition average (<math alttext="2{,}913\div 40\approx 73" class="ltx_Math" display="inline" id="A1.SS3.SSS0.Px4.p3.m1"><semantics><mrow><mrow><mn>2,913</mn><mo>÷</mo><mn>40</mn></mrow><mo>≈</mo><mn>73</mn></mrow><annotation encoding="application/x-tex">2{,}913\div 40\approx 73</annotation></semantics></math>).</p>
+</div>
+<div class="ltx_para" id="A1.SS3.SSS0.Px4.p4">
+<p class="ltx_p" id="A1.SS3.SSS0.Px4.p4.1"><span class="ltx_text ltx_font_bold" id="A1.SS3.SSS0.Px4.p4.1.1">Tasks fixed.</span> 26 (0/3 to 3/3).</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="A1.SS3.SSS0.Px5">
+<h4 class="ltx_title ltx_font_bold ltx_title_paragraph" id="source-heading-28">Policy #5 — Missing Requisition ID vs. Unsupported Query</h4>
+<div class="ltx_para" id="A1.SS3.SSS0.Px5.p1">
+<p class="ltx_p" id="A1.SS3.SSS0.Px5.p1.1"><span class="ltx_text ltx_font_italic" id="A1.SS3.SSS0.Px5.p1.1.1">Type: Playbook.
+Trigger: keywords + natural language (threshold 0.60, priority 85).</span></p>
+</div>
+<div class="ltx_para" id="A1.SS3.SSS0.Px5.p2">
+<p class="ltx_p" id="A1.SS3.SSS0.Px5.p2.1">This policy helps the agent distinguish between “I need a requisition ID to
+answer this” (answerable but missing context) and “this cannot be answered
+regardless of requisition ID” (unsupported by any API). It reinforces
+Policy #1 for edge cases where the triggering language differs.</p>
+</div>
+<div class="ltx_para" id="A1.SS3.SSS0.Px5.p3">
+<p class="ltx_p" id="A1.SS3.SSS0.Px5.p3.1"><span class="ltx_text ltx_font_bold" id="A1.SS3.SSS0.Px5.p3.1.1">Failure pattern addressed.</span> The agent would request a requisition ID
+even for queries that no API supports under any circumstances.</p>
+</div>
+<div class="ltx_para" id="A1.SS3.SSS0.Px5.p4">
+<p class="ltx_p" id="A1.SS3.SSS0.Px5.p4.1"><span class="ltx_text ltx_font_bold" id="A1.SS3.SSS0.Px5.p4.1.1">Tasks fixed.</span> Overlaps with Policy #1; provides reinforcement for
+edge cases not caught by Policy #1’s triggers.</p>
+</div>
+</section>
+</section>
+<section class="ltx_subsection" id="A1.SS4">
+<h3 class="ltx_title ltx_title_subsection" id="source-heading-29"><span class="ltx_tag ltx_tag_subsection">A.4. </span>Remaining Failing Tasks</h3>
+<div class="ltx_para" id="A1.SS4.p1">
+<p class="ltx_p" id="A1.SS4.p1.1">Table <a class="ltx_ref" href="#A1.T5" title="Table 5 ‣ A.4. Remaining Failing Tasks ‣ Appendix A Ablation Study: BPO Benchmark ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">5</span></a> documents the six tasks that remain unsolved (or
+partially unsolved) after all five policies are applied, together with a
+diagnosis of each failure mode.</p>
+</div>
+<figure class="ltx_table" id="A1.T5">
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle" id="A1.T5.2">
+<thead class="ltx_thead">
+<tr class="ltx_tr" id="A1.T5.2.1">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="A1.T5.2.1.1"><span class="ltx_text ltx_font_bold" id="A1.T5.2.1.1.1">Task</span></th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt" id="A1.T5.2.1.2"><span class="ltx_text ltx_font_bold" id="A1.T5.2.1.2.1">Pass rate</span></th>
+<th class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_column ltx_border_tt" id="A1.T5.2.1.3">
+<span class="ltx_inline-block ltx_align_top" id="A1.T5.2.1.3.1">
+<span class="ltx_p" id="A1.T5.2.1.3.1.1"><span class="ltx_text ltx_font_bold" id="A1.T5.2.1.3.1.1.1">Issue</span></span>
+</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr" id="A1.T5.2.2">
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T5.2.2.1">3</td>
+<td class="ltx_td ltx_align_left ltx_border_t" id="A1.T5.2.2.2">0/3</td>
+<td class="ltx_td ltx_align_left ltx_align_top ltx_border_t" id="A1.T5.2.2.3">
+<span class="ltx_inline-block ltx_align_top" id="A1.T5.2.2.3.1">
+<span class="ltx_p" id="A1.T5.2.2.3.1.1">Agent provides incomplete source data (only LinkedIn; misses Dice and GitHub details). Requires richer answer synthesis.</span>
+</span></td></tr>
+<tr class="ltx_tr" id="A1.T5.2.3">
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T5.2.3.1">6</td>
+<td class="ltx_td ltx_align_left ltx_border_t" id="A1.T5.2.3.2">0/3</td>
+<td class="ltx_td ltx_align_left ltx_align_top ltx_border_t" id="A1.T5.2.3.3">
+<span class="ltx_inline-block ltx_align_top" id="A1.T5.2.3.3.1">
+<span class="ltx_p" id="A1.T5.2.3.3.1.1">Garbled percentages from the summary tool. May require further tool-description refinement.</span>
+</span></td></tr>
+<tr class="ltx_tr" id="A1.T5.2.4">
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T5.2.4.1">7</td>
+<td class="ltx_td ltx_align_left ltx_border_t" id="A1.T5.2.4.2">0/3</td>
+<td class="ltx_td ltx_align_left ltx_align_top ltx_border_t" id="A1.T5.2.4.3">
+<span class="ltx_inline-block ltx_align_top" id="A1.T5.2.4.3.1">
+<span class="ltx_p" id="A1.T5.2.4.3.1.1">LLM judge scores correct agent behaviour as 0. Failure is in the judge, not the agent.</span>
+</span></td></tr>
+<tr class="ltx_tr" id="A1.T5.2.5">
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T5.2.5.1">12</td>
+<td class="ltx_td ltx_align_left ltx_border_t" id="A1.T5.2.5.2">2/3</td>
+<td class="ltx_td ltx_align_left ltx_align_top ltx_border_t" id="A1.T5.2.5.3">
+<span class="ltx_inline-block ltx_align_top" id="A1.T5.2.5.3.1">
+<span class="ltx_p" id="A1.T5.2.5.3.1.1">Agent occasionally omits one data-source name. Attributed to LLM non-determinism.</span>
+</span></td></tr>
+<tr class="ltx_tr" id="A1.T5.2.6">
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T5.2.6.1">15</td>
+<td class="ltx_td ltx_align_left ltx_border_t" id="A1.T5.2.6.2">0/3</td>
+<td class="ltx_td ltx_align_left ltx_align_top ltx_border_t" id="A1.T5.2.6.3">
+<span class="ltx_inline-block ltx_align_top" id="A1.T5.2.6.3.1">
+<span class="ltx_p" id="A1.T5.2.6.3.1.1">Agent calls too few APIs and misidentifies negative-SLA skills. Complex multi-part question.</span>
+</span></td></tr>
+<tr class="ltx_tr" id="A1.T5.2.7">
+<td class="ltx_td ltx_align_center ltx_border_t" id="A1.T5.2.7.1">24</td>
+<td class="ltx_td ltx_align_left ltx_border_t" id="A1.T5.2.7.2">2/3</td>
+<td class="ltx_td ltx_align_left ltx_align_top ltx_border_t" id="A1.T5.2.7.3">
+<span class="ltx_inline-block ltx_align_top" id="A1.T5.2.7.3.1">
+<span class="ltx_p" id="A1.T5.2.7.3.1.1">Agent sometimes invokes an error tool for an invalid requisition ID. Partially addressed by Policy #2.</span>
+</span></td></tr>
+<tr class="ltx_tr" id="A1.T5.2.8">
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_t" id="A1.T5.2.8.1">25</td>
+<td class="ltx_td ltx_align_left ltx_border_bb ltx_border_t" id="A1.T5.2.8.2">0/3</td>
+<td class="ltx_td ltx_align_left ltx_align_top ltx_border_bb ltx_border_t" id="A1.T5.2.8.3">
+<span class="ltx_inline-block ltx_align_top" id="A1.T5.2.8.3.1">
+<span class="ltx_p" id="A1.T5.2.8.3.1.1">Agent calls <span class="ltx_text ltx_font_typewriter" id="A1.T5.2.8.3.1.1.1">requisition-details</span> error tool for requisition <span class="ltx_text ltx_font_typewriter" id="A1.T5.2.8.3.1.1.2">UZLXBR</span> instead of declining. Edge case not caught by Policy #1 triggers.</span>
+</span></td></tr>
+</tbody>
+</table></div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table">Table 5. </span>Remaining failing tasks after five-policy configuration.</figcaption>
+</figure>
+</section>
+</section>
+<section class="ltx_appendix" id="A2">
+<h2 class="ltx_title ltx_title_appendix" id="source-heading-30"><span class="ltx_tag ltx_tag_appendix">Appendix B </span>Policy System Evaluations</h2>
+<div class="ltx_para" id="A2.p1">
+<p class="ltx_p" id="A2.p1.1">We presented CUGA’s policy system evaluation in Section <a class="ltx_ref" href="#S4" title="4. Results ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">4</span></a>. Here, we extend that discussion by reporting the token usage associated with each evaluation, providing a quantitative measure of the overhead introduced by our method. Results are shown in Table <a class="ltx_ref" href="#A2.T6" title="Table 6 ‣ Appendix B Policy System Evaluations ‣ Governance by Construction for Generalist Agents"><span class="ltx_text ltx_ref_tag">6</span></a>.</p>
+</div>
+<figure class="ltx_table" id="A2.T6">
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle" id="A2.T6.2">
+<thead class="ltx_thead">
+<tr class="ltx_tr" id="A2.T6.2.1">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="A2.T6.2.1.1"><span class="ltx_text ltx_font_bold" id="A2.T6.2.1.1.1">Benchmark</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="A2.T6.2.1.2"><span class="ltx_text ltx_font_bold" id="A2.T6.2.1.2.1">Model</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="A2.T6.2.1.3"><span class="ltx_text ltx_font_bold" id="A2.T6.2.1.3.1">Accuracy (W/O <math alttext="\rightarrow" class="ltx_Math" display="inline" id="A2.T6.m1"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math> W)</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="A2.T6.2.1.4"><math alttext="\Delta" class="ltx_Math" display="inline" id="A2.T6.m2"><semantics><mi>Δ</mi><annotation encoding="application/x-tex">\Delta</annotation></semantics></math></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" id="A2.T6.2.1.5"><span class="ltx_text ltx_font_bold" id="A2.T6.2.1.5.1">Tokens (W/O <math alttext="\rightarrow" class="ltx_Math" display="inline" id="A2.T6.m3"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math> W)</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr" id="A2.T6.2.2">
+<td class="ltx_td ltx_align_center ltx_border_t" id="A2.T6.2.2.1" rowspan="3"><span class="ltx_text" id="A2.T6.2.2.1.1">OAK</span></td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A2.T6.2.2.2">GPT-OSS-120B</td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A2.T6.2.2.3"><math alttext="75\%\rightarrow 100\%" class="ltx_Math" display="inline" id="A2.T6.m4"><semantics><mrow><mrow><mn>75</mn><mo>%</mo></mrow><mo stretchy="false">→</mo><mrow><mn>100</mn><mo>%</mo></mrow></mrow><annotation encoding="application/x-tex">75\%\rightarrow 100\%</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A2.T6.2.2.4"><math alttext="+25" class="ltx_Math" display="inline" id="A2.T6.m5"><semantics><mrow><mo>+</mo><mn>25</mn></mrow><annotation encoding="application/x-tex">+25</annotation></semantics></math> pp</td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A2.T6.2.2.5"><math alttext="26.2k\rightarrow 40k" class="ltx_Math" display="inline" id="A2.T6.m6"><semantics><mrow><mrow><mn>26.2</mn><mo>​</mo><mi>k</mi></mrow><mo stretchy="false">→</mo><mrow><mn>40</mn><mo>​</mo><mi>k</mi></mrow></mrow><annotation encoding="application/x-tex">26.2k\rightarrow 40k</annotation></semantics></math></td></tr>
+<tr class="ltx_tr" id="A2.T6.2.3">
+<td class="ltx_td ltx_align_center" id="A2.T6.2.3.1">GPT-4.1</td>
+<td class="ltx_td ltx_align_center" id="A2.T6.2.3.2"><math alttext="70\%\rightarrow 96\%" class="ltx_Math" display="inline" id="A2.T6.m7"><semantics><mrow><mrow><mn>70</mn><mo>%</mo></mrow><mo stretchy="false">→</mo><mrow><mn>96</mn><mo>%</mo></mrow></mrow><annotation encoding="application/x-tex">70\%\rightarrow 96\%</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_center" id="A2.T6.2.3.3"><math alttext="+26" class="ltx_Math" display="inline" id="A2.T6.m8"><semantics><mrow><mo>+</mo><mn>26</mn></mrow><annotation encoding="application/x-tex">+26</annotation></semantics></math> pp</td>
+<td class="ltx_td ltx_align_center" id="A2.T6.2.3.4"><math alttext="28.2k\rightarrow 44k" class="ltx_Math" display="inline" id="A2.T6.m9"><semantics><mrow><mrow><mn>28.2</mn><mo>​</mo><mi>k</mi></mrow><mo stretchy="false">→</mo><mrow><mn>44</mn><mo>​</mo><mi>k</mi></mrow></mrow><annotation encoding="application/x-tex">28.2k\rightarrow 44k</annotation></semantics></math></td></tr>
+<tr class="ltx_tr" id="A2.T6.2.4">
+<td class="ltx_td ltx_align_center" id="A2.T6.2.4.1">Claude Opus-4.5</td>
+<td class="ltx_td ltx_align_center" id="A2.T6.2.4.2"><math alttext="81\%\rightarrow 96\%" class="ltx_Math" display="inline" id="A2.T6.m10"><semantics><mrow><mrow><mn>81</mn><mo>%</mo></mrow><mo stretchy="false">→</mo><mrow><mn>96</mn><mo>%</mo></mrow></mrow><annotation encoding="application/x-tex">81\%\rightarrow 96\%</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_center" id="A2.T6.2.4.3"><math alttext="+15" class="ltx_Math" display="inline" id="A2.T6.m11"><semantics><mrow><mo>+</mo><mn>15</mn></mrow><annotation encoding="application/x-tex">+15</annotation></semantics></math> pp</td>
+<td class="ltx_td ltx_align_center" id="A2.T6.2.4.4"><math alttext="44k\rightarrow 85k" class="ltx_Math" display="inline" id="A2.T6.m12"><semantics><mrow><mrow><mn>44</mn><mo>​</mo><mi>k</mi></mrow><mo stretchy="false">→</mo><mrow><mn>85</mn><mo>​</mo><mi>k</mi></mrow></mrow><annotation encoding="application/x-tex">44k\rightarrow 85k</annotation></semantics></math></td></tr>
+<tr class="ltx_tr" id="A2.T6.2.5">
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_t" id="A2.T6.2.5.1" rowspan="4"><span class="ltx_text" id="A2.T6.2.5.1.1">BPO</span></td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A2.T6.2.5.2">GPT-OSS-120B</td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A2.T6.2.5.3"><math alttext="49.2\%\rightarrow 82.3\%" class="ltx_Math" display="inline" id="A2.T6.m13"><semantics><mrow><mrow><mn>49.2</mn><mo>%</mo></mrow><mo stretchy="false">→</mo><mrow><mn>82.3</mn><mo>%</mo></mrow></mrow><annotation encoding="application/x-tex">49.2\%\rightarrow 82.3\%</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A2.T6.2.5.4"><math alttext="+33.1" class="ltx_Math" display="inline" id="A2.T6.m14"><semantics><mrow><mo>+</mo><mn>33.1</mn></mrow><annotation encoding="application/x-tex">+33.1</annotation></semantics></math> pp</td>
+<td class="ltx_td ltx_align_center ltx_border_t" id="A2.T6.2.5.5"><math alttext="3.7M\rightarrow 6.6M" class="ltx_Math" display="inline" id="A2.T6.m15"><semantics><mrow><mrow><mn>3.7</mn><mo>​</mo><mi>M</mi></mrow><mo stretchy="false">→</mo><mrow><mn>6.6</mn><mo>​</mo><mi>M</mi></mrow></mrow><annotation encoding="application/x-tex">3.7M\rightarrow 6.6M</annotation></semantics></math></td></tr>
+<tr class="ltx_tr" id="A2.T6.2.6">
+<td class="ltx_td ltx_align_center" id="A2.T6.2.6.1">GPT-4.1</td>
+<td class="ltx_td ltx_align_center" id="A2.T6.2.6.2"><math alttext="28.5\%\rightarrow 66.2\%" class="ltx_Math" display="inline" id="A2.T6.m16"><semantics><mrow><mrow><mn>28.5</mn><mo>%</mo></mrow><mo stretchy="false">→</mo><mrow><mn>66.2</mn><mo>%</mo></mrow></mrow><annotation encoding="application/x-tex">28.5\%\rightarrow 66.2\%</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_center" id="A2.T6.2.6.3"><math alttext="+37.7" class="ltx_Math" display="inline" id="A2.T6.m17"><semantics><mrow><mo>+</mo><mn>37.7</mn></mrow><annotation encoding="application/x-tex">+37.7</annotation></semantics></math> pp</td>
+<td class="ltx_td ltx_align_center" id="A2.T6.2.6.4"><math alttext="2.7M\rightarrow 8.8M" class="ltx_Math" display="inline" id="A2.T6.m18"><semantics><mrow><mrow><mn>2.7</mn><mo>​</mo><mi>M</mi></mrow><mo stretchy="false">→</mo><mrow><mn>8.8</mn><mo>​</mo><mi>M</mi></mrow></mrow><annotation encoding="application/x-tex">2.7M\rightarrow 8.8M</annotation></semantics></math></td></tr>
+<tr class="ltx_tr" id="A2.T6.2.7">
+<td class="ltx_td ltx_align_center ltx_border_bb" id="A2.T6.2.7.1">Claude Opus-4.5</td>
+<td class="ltx_td ltx_align_center ltx_border_bb" id="A2.T6.2.7.2"><math alttext="50.0\%\rightarrow 68.5\%" class="ltx_Math" display="inline" id="A2.T6.m19"><semantics><mrow><mrow><mn>50.0</mn><mo>%</mo></mrow><mo stretchy="false">→</mo><mrow><mn>68.5</mn><mo>%</mo></mrow></mrow><annotation encoding="application/x-tex">50.0\%\rightarrow 68.5\%</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_center ltx_border_bb" id="A2.T6.2.7.3"><math alttext="+18.5" class="ltx_Math" display="inline" id="A2.T6.m20"><semantics><mrow><mo>+</mo><mn>18.5</mn></mrow><annotation encoding="application/x-tex">+18.5</annotation></semantics></math> pp</td>
+<td class="ltx_td ltx_align_center ltx_border_bb" id="A2.T6.2.7.4"><math alttext="6.2M\rightarrow 9.0M" class="ltx_Math" display="inline" id="A2.T6.m21"><semantics><mrow><mrow><mn>6.2</mn><mo>​</mo><mi>M</mi></mrow><mo stretchy="false">→</mo><mrow><mn>9.0</mn><mo>​</mo><mi>M</mi></mrow></mrow><annotation encoding="application/x-tex">6.2M\rightarrow 9.0M</annotation></semantics></math></td></tr>
+</tbody>
+</table></div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table">Table 6. </span>Success Rate and Token Usage on OAK and BPO benchmarks, with and without CUGA’s policy system, across three backbone models. W/O = without policy system; W = with policy system.</figcaption>
+</figure>
+</section>
+</article>

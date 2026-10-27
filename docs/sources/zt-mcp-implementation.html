@@ -1,0 +1,297 @@
+<h1 id="zt-mcp-a-zero-trust-security-architecture-for-mcp-connected-ai-agents">ZT-MCP: A Zero-Trust Security Architecture for MCP-Connected AI Agents</h1>
+<h3 id="reference-implementation">Reference Implementation</h3>
+<p>ZT-MCP is a zero-trust enforcement middleware designed for the Model Context Protocol (MCP) ecosystem. It operates below the agent reasoning layer to provide protocol-level, deterministic, and tamper-evidently auditable security controls.</p>
+<h2 id="key-capabilities">🔐 Key Capabilities</h2>
+<ul>
+<li>Prevents tool spoofing</li>
+<li>Blocks unauthorized invocation</li>
+<li>Mitigates prompt injection attacks</li>
+<li>Protects against data exfiltration</li>
+<li>Ensures verifiable and auditable policy enforcement</li>
+</ul>
+<hr/>
+<h2 id="paper-citation">📄 Paper Citation</h2>
+<p>If you use ZT-MCP or the formal CapBAC model in your research, please cite:</p>
+<pre><code class="language-bibtex">@inproceedings{mishra2026ztmcp,
+  author    = {Mishra, Saroj},
+  title     = {{ZT-MCP}: A Zero-Trust Security Architecture for {MCP}-Connected {AI} Agents},
+  booktitle = {Proc. IEEE Int. Conf. on Omni-Layer Intelligent Systems (COINS)},
+  year      = {2026},
+  note      = {Accepted for presentation at IEEE COINS 2026; proceedings forthcoming}
+}
+</code></pre>
+<hr/>
+<h2 id="architecture-overview">🏗️ Architecture Overview</h2>
+<p>ZT-MCP is composed of four decoupled microservices:</p>
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tiv/</td>
+<td>Tool Identity Verifier (certificate validation &amp; CRL checks)</td>
+</tr>
+<tr>
+<td>ape/</td>
+<td>Access Policy Engine (OPA-based CapBAC &amp; ABAC evaluation)</td>
+</tr>
+<tr>
+<td>dcof/</td>
+<td>Data Classification &amp; Output Filter (PII detection &amp; injection sanitization)</td>
+</tr>
+<tr>
+<td>pal/</td>
+<td>Protocol Audit Logger (tamper-evident HMAC-SHA256 hash chain)</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="nist-sp-800-207-zero-trust-alignment">🏛️ NIST SP 800-207 Zero-Trust Alignment</h2>
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>NIST SP 800-207 Pillar</th>
+<th>ZT-MCP Component</th>
+<th>Mechanism</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verify Explicitly</td>
+<td>TIV</td>
+<td>Cryptographic certificate verification at every invocation</td>
+</tr>
+<tr>
+<td>Use Least Privilege</td>
+<td>APE</td>
+<td>Capability tokens scoped to minimum required action</td>
+</tr>
+<tr>
+<td>Assume Breach</td>
+<td>DCOF</td>
+<td>All tool outputs treated as adversarial; classified before agent use</td>
+</tr>
+<tr>
+<td>Continuous Validation</td>
+<td>PAL</td>
+<td>Every interaction logged; anomaly detection on access patterns</td>
+</tr>
+<tr>
+<td>Micro-Segmentation</td>
+<td>Deployment Modes</td>
+<td>Each tool in isolated context; tool compromise cannot propagate</td>
+</tr>
+</tbody>
+</table></div>
+<p>The framework also maps to all four NIST AI RMF functions: GOVERN (APE), MAP (threat taxonomy), MEASURE (5 evaluation metrics), MANAGE (all four components at runtime).</p>
+<hr/>
+<h2 id="relationship-to-hitl-ap">🔗 Relationship to HITL-AP</h2>
+<p>ZT-MCP is the <strong>protocol-level</strong> complement to <a href="https://github.com/sarmishra/HITL-AP-Project">HITL-AP</a>, a pipeline-level agent governance framework.</p>
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th></th>
+<th>HITL-AP</th>
+<th>ZT-MCP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Layer</strong></td>
+<td>Pipeline (agent reasoning, L1-L7)</td>
+<td>Protocol (MCP tool boundary)</td>
+</tr>
+<tr>
+<td><strong>Focus</strong></td>
+<td>Agent decision governance</td>
+<td>Tool access control</td>
+</tr>
+<tr>
+<td><strong>Enforcement</strong></td>
+<td>Human-in-the-loop oversight</td>
+<td>Automated cryptographic enforcement</td>
+</tr>
+<tr>
+<td><strong>Trust assumption</strong></td>
+<td>Trusts tool communication channel</td>
+<td>Explicitly validates every tool interaction</td>
+</tr>
+</tbody>
+</table></div>
+<p>Together they form a complete defense-in-depth stack: HITL-AP governs <strong>what</strong> the agent decides; ZT-MCP governs <strong>how</strong> it accesses external tools.</p>
+<hr/>
+<h2 id="quick-start">🚀 Quick Start</h2>
+<h3 id="prerequisites">✅ Prerequisites</h3>
+<ul>
+<li>Docker &amp; Docker Compose</li>
+<li>Python 3.9+</li>
+</ul>
+<hr/>
+<h3 id="1-clone--configure">1️⃣ Clone &amp; Configure</h3>
+<pre><code class="language-bash">git clone https://github.com/sarmishra/ZT-MCP-Project.git
+cd ZT-MCP-Project
+cp .env.example .env
+</code></pre>
+<hr/>
+<h3 id="2-start-infrastructure">2️⃣ Start Infrastructure</h3>
+<p>ZT-MCP depends on:
+- Open Policy Agent (OPA)
+- PostgreSQL (audit logging)</p>
+<pre><code class="language-bash">docker-compose up -d
+</code></pre>
+<p>Note: Database schema auto-initializes via:
+scripts/init_pal_db.sql</p>
+<hr/>
+<h3 id="3-install-dependencies">3️⃣ Install Dependencies</h3>
+<pre><code class="language-bash">python -m venv venv
+
+# Activate environment
+source venv/bin/activate     # macOS/Linux
+venv\Scripts\activate        # Windows
+
+pip install -r requirements.txt
+</code></pre>
+<hr/>
+<h2 id="deployment-modes">⚙️ Deployment Modes</h2>
+<p>Set via environment variable <code>ZTMCP_MODE</code> in <code>.env</code>:</p>
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Behavior</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>strict</code></td>
+<td>All invocations require capability token + full APE approval. No exceptions.</td>
+<td>Regulated enterprise and compliance-driven environments</td>
+</tr>
+<tr>
+<td><code>adaptive</code> (default)</td>
+<td>Policy strictness scales with data sensitivity and tool risk score</td>
+<td>General enterprise deployment — <strong>recommended</strong></td>
+</tr>
+<tr>
+<td><code>audit-only</code></td>
+<td>Logs all interactions without blocking. Violations flagged for review.</td>
+<td>Initial deployment / baseline calibration</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Recommended first deployment:</strong> Start in <code>audit-only</code> to establish behavioral baselines, then switch to <code>adaptive</code>.</p>
+<hr/>
+<h2 id="reproducing-empirical-evaluation-table-v">🧪 Reproducing Empirical Evaluation (Table V)</h2>
+<p>This repository includes the full evaluation suite used in the paper (N = 35 experiments).</p>
+<h3 id="attack-scenarios-tested">⚠️ Attack Scenarios Tested</h3>
+<ul>
+<li>Tool spoofing</li>
+<li>Unauthorized network egress (smtp_send)</li>
+<li>Indirect prompt injection</li>
+<li>Privilege escalation</li>
+</ul>
+<hr/>
+<h3 id="run-evaluation">▶️ Run Evaluation</h3>
+<pre><code class="language-bash">python evaluation/run_evaluation.py
+</code></pre>
+<hr/>
+<h2 id="evaluation-results-n35-runs-per-condition">📊 Evaluation Results (N=35 runs per condition)</h2>
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>System</th>
+<th>ACP (%)</th>
+<th>PEL (ms)</th>
+<th>TAC (%)</th>
+<th>ABR (%)</th>
+<th>FPR (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unprotected MCP (Baseline)</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>0.0 ± 0.0</td>
+<td>0.0 ± 0.0</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>ZT-MCP — Strict Mode</td>
+<td>100.0 ± 0.0</td>
+<td>47.8 ± 3.8</td>
+<td>100.0 ± 0.0</td>
+<td>100.0 ± 0.0</td>
+<td>0.0 ± 0.0</td>
+</tr>
+<tr>
+<td>ZT-MCP — Adaptive Mode</td>
+<td>100.0 ± 0.0</td>
+<td>39.5 ± 3.1</td>
+<td>100.0 ± 0.0</td>
+<td>100.0 ± 0.0</td>
+<td>0.0 ± 0.0</td>
+</tr>
+</tbody>
+</table></div>
+<p>Pipeline: <code>data_query</code> → <code>report_generator</code> → compliance report<br/>
+Attacks tested: tool spoofing, smtp exfiltration, prompt injection, privilege escalation<br/>
+PEL includes simulated MCP network round-trip overhead (15–38ms TCP base).</p>
+<p>To reproduce: <code>python evaluation/run_evaluation.py</code> (random seed 42)</p>
+<h3 id="metric-definitions-and-targets">Metric Definitions and Targets</h3>
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Definition</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACP</td>
+<td>% of allow/deny decisions matching ground truth policy</td>
+<td>&gt; 95%</td>
+</tr>
+<tr>
+<td>PEL</td>
+<td>Latency from invocation request to ZT-MCP decision (ms)</td>
+<td>&lt; 100ms</td>
+</tr>
+<tr>
+<td>TAC</td>
+<td>% of MCP interactions captured in PAL audit log</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>ABR</td>
+<td>% of adversarial interactions blocked before execution</td>
+<td>Maximize</td>
+</tr>
+<tr>
+<td>FPR</td>
+<td>% of legitimate invocations incorrectly denied</td>
+<td>&lt; 2%</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="output">📁 Output</h2>
+<p>Evaluation results are stored in:
+evaluation/evaluation_results.json</p>
+<hr/>
+<h2 id="license">📜 License</h2>
+<p>This project is licensed under the MIT License.
+See the LICENSE file for details.</p>
+<hr/>
+<h2 id="contribution">🤝 Contribution</h2>
+<p>Contributions, issues, and feature requests are welcome.
+Feel free to fork the repo and submit a pull request.</p>
+<hr/>
+<h2 id="acknowledgment">⭐ Acknowledgment</h2>
+<p>If you find this work useful, consider giving the repository a star.</p>

@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f8f6f0">
+  <title>Microsoft Agent Governance Toolkit · Zero Trust MCP Gateway</title>
+  <link rel="stylesheet" href="../assets/reader.css">
+  <script src="../assets/reader.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">↗</span> ZERO TRUST <span class="brand-detail">/ RESEARCH LIBRARY</span></a>
+    <div class="reading-controls" role="group" aria-label="Text size" hidden>
+      <button type="button" data-size="-1" aria-label="Decrease text size">A−</button>
+      <button type="button" data-size="1" aria-label="Increase text size">A+</button>
+    </div>
+  </header>
+  <main id="main" class="article-main">
+      <article>
+        <header class="article-header">
+          <a class="back-link" href="../index.html#implementation">← All resources</a>
+          <p class="eyebrow">Implementation / 08 OF 11</p>
+          <h1>Microsoft Agent Governance Toolkit</h1>
+          <p class="publisher">microsoft/agent-governance-toolkit · GitHub</p><a class="source-button" href="https://github.com/microsoft/agent-governance-toolkit">Open original source ↗</a>
+        </header>
+        <section class="supplied-notes" aria-labelledby="notes-title"><h2 id="notes-title">Research notes</h2>
+          <p>Agent identity, runtime governance, policy, execution validation and audit</p>
+          <dl><dt>What to investigate</dt><dd>Controlling agent actions as well as tool access</dd></dl>
+          <p class="caption">Notes supplied for this project, preserved as written.</p>
+        </section>
+        <section class="provenance" aria-labelledby="provenance-title">
+          <h2 id="provenance-title">About this reading copy</h2>
+          <p>Copyright (c) Microsoft Corporation. Upstream README, captured 27 October 2026.</p>
+          <p>Original README wording rendered as HTML. Relative links are resolved against the upstream repository, headings receive reader anchors, and active website content is removed. Images remain linked to their upstream locations.</p>
+          <p><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/README.md">Exact source version ↗</a> · <a href="../licenses/microsoft-agent-governance-toolkit.txt">MIT</a></p>
+        </section>
+        <section class="source-copy" aria-label="Original source text"><p>🌍 <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/README.md">English</a> | <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/i18n/README.es.md">Español</a> | <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/i18n/README.ja.md">日本語</a> | <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/i18n/README.zh-CN.md">简体中文</a> | <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/i18n/README.ko.md">한국어</a> | <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/i18n/README.zh-TW.md">繁體中文</a></p>
+<p><img alt="Agent Governance Toolkit" loading="lazy" referrerpolicy="no-referrer" src="https://raw.githubusercontent.com/microsoft/agent-governance-toolkit/main/docs/assets/readme-banner.svg"/></p>
+<h1 id="agent-governance-toolkit">Agent Governance Toolkit</h1>
+<h3 id="ship-agents-to-production-without-losing-sleep">Ship agents to production without losing sleep</h3>
+<p>
+<a href="https://microsoft.github.io/agent-governance-toolkit">
+<img alt="Full Documentation" height="40" loading="lazy" referrerpolicy="no-referrer" src="https://img.shields.io/badge/%F0%9F%93%96_Full_Documentation-microsoft.github.io%2Fagent--governance--toolkit-0078D4?style=for-the-badge&amp;logoColor=white"/>
+</a>
+</p>
+<p>
+<strong>
+    🚀 <a href="#quick-start">Quick Start</a> ·
+    📋 <a href="#specifications">Specifications</a> ·
+    📦 <a href="https://pypi.org/project/agent-governance-toolkit/">PyPI</a> ·
+    📝 <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/CHANGELOG.md">Changelog</a>
+</strong>
+</p>
+<p><a href="https://github.com/microsoft/agent-governance-toolkit/actions/workflows/ci.yml"><img alt="CI" loading="lazy" referrerpolicy="no-referrer" src="https://github.com/microsoft/agent-governance-toolkit/actions/workflows/ci.yml/badge.svg"/></a>
+<a href="https://discord.gg/TxMRqY3pFr"><img alt="Discord" loading="lazy" referrerpolicy="no-referrer" src="https://dcbadge.limes.pink/api/server/TxMRqY3pFr?style=flat"/></a>
+<a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/LICENSE"><img alt="License: MIT" loading="lazy" referrerpolicy="no-referrer" src="https://img.shields.io/badge/License-MIT-yellow.svg"/></a>
+<a href="https://pypi.org/project/agent-governance-toolkit/"><img alt="PyPI version" loading="lazy" referrerpolicy="no-referrer" src="https://img.shields.io/pypi/v/agent-governance-toolkit?label=PyPI"/></a>
+<a href="https://www.npmjs.com/package/@microsoft/agent-governance-sdk"><img alt="npm" loading="lazy" referrerpolicy="no-referrer" src="https://img.shields.io/npm/v/%40microsoft/agent-governance-sdk?label=npm"/></a>
+<a href="https://www.nuget.org/packages/Microsoft.AgentGovernance"><img alt="NuGet" loading="lazy" referrerpolicy="no-referrer" src="https://img.shields.io/nuget/v/Microsoft.AgentGovernance?label=NuGet"/></a>
+<a href="https://scorecard.dev/viewer/?uri=github.com/microsoft/agent-governance-toolkit"><img alt="OpenSSF Scorecard" loading="lazy" referrerpolicy="no-referrer" src="https://api.scorecard.dev/projects/github.com/microsoft/agent-governance-toolkit/badge"/></a>
+<a href="https://www.bestpractices.dev/projects/12085"><img alt="OpenSSF Best Practices" loading="lazy" referrerpolicy="no-referrer" src="https://www.bestpractices.dev/projects/12085/badge"/></a>
+<a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/compliance/owasp-agentic-top10-architecture.md"><img alt="OWASP Agentic Top 10" loading="lazy" referrerpolicy="no-referrer" src="https://img.shields.io/badge/OWASP_Agentic_Top_10-7_Full,_3_Partial-blue"/></a>
+<a href="https://aarm.dev/builders/agent-governance-toolkit-microsoft"><img alt="AARM Extended" loading="lazy" referrerpolicy="no-referrer" src="https://img.shields.io/badge/AARM-Extended_(R1–R9)-brightgreen"/></a>
+<a href="https://agentictrustframework.ai/ecosystem"><img alt="ATF" loading="lazy" referrerpolicy="no-referrer" src="https://img.shields.io/badge/ATF-All_5_Elements-brightgreen"/></a></p>
+<blockquote>
+<p>[!IMPORTANT]
+<strong>Public Preview</strong> -- production-quality public preview releases. May have breaking changes before GA.</p>
+</blockquote>
+<p>Policy enforcement, identity, sandboxing, and SRE for autonomous AI agents. One <code>pip install</code>, any framework.</p>
+<hr/>
+<h2 id="the-problem">The Problem</h2>
+<p>Your AI agents call tools, browse the web, query databases, and delegate to other agents. Once deployed, they make decisions autonomously. You need answers to three questions:</p>
+<p><strong>1. Is this action allowed?</strong> An agent with access to <code>send_email</code> and <code>query_database</code> should not be able to <code>drop_table</code>. OAuth scopes and IAM roles control which services an agent can reach, not what it does once connected.</p>
+<p><strong>2. Which agent did this?</strong> In a multi-agent system, five agents might share a single API key. When something goes wrong, "an agent did it" is not an incident response.</p>
+<p><strong>3. Can you prove what happened?</strong> Auditors and regulators need tamper-evident records of every decision: what policy was active, what the agent requested, and why it was allowed or denied.</p>
+<p>Prompt-level safety ("please follow the rules") is not a control surface. It is a polite request to a stochastic system. <a href="https://genai.owasp.org/llmrisk/llm01-prompt-injection/">OWASP LLM01:2025</a> states this explicitly: <em>"it is unclear if there are fool-proof methods of prevention for prompt injection."</em> The published numbers back this up. <a href="https://arxiv.org/abs/2404.02151">Andriushchenko et al. (ICLR 2025)</a> report <strong>100% attack success rate</strong> on GPT-4o, GPT-3.5, Claude 3, and Llama-3 using adaptive attacks with logprob access and suffix optimization, evaluated against the <a href="https://arxiv.org/abs/2404.01318">JailbreakBench</a> benchmark (Chao et al., NeurIPS 2024). Microsoft's own <a href="https://learn.microsoft.com/azure/ai-foundry/concepts/ai-red-teaming-agent">AI Red Teaming Agent</a> formalizes <strong>Attack Success Rate (ASR)</strong>, the rate of policy violations under adversarial input, as the canonical metric for this class of failure. <a href="https://www.microsoft.com/en-us/security/blog/2025/01/13/3-takeaways-from-red-teaming-100-generative-ai-products/"><em>Lessons from Red Teaming 100 Generative AI Products</em></a> reinforces the point: <em>"mitigations do not eliminate risk entirely"</em> and red teaming must be a continuous process because model-layer defenses are probabilistic by construction.</p>
+<p>AGT does not try to win that fight inside the prompt. Every tool call, message send, and delegation is intercepted in deterministic application code <em>before</em> the model's intent reaches the wire. Actions the AGT kernel denies are not "unlikely." They are <strong>structurally impossible</strong>. That is the difference between asking an agent to behave and making it incapable of misbehaving.</p>
+<hr/>
+<h2 id="quick-start">Quick Start</h2>
+<p><strong>Prerequisites:</strong> Python 3.11+</p>
+<pre><code class="language-bash">pip install "agent-governance-toolkit[full]"
+</code></pre>
+<p>Use the <code>[full]</code> extra for the quick-start imports below. The base
+<code>agent-governance-toolkit</code> wheel installs the compliance CLI only; the governance
+modules live in the consolidated core distribution. The <code>agentmesh</code> quick-start
+import remains the current wrapper API. Importing <code>agent_os</code> emits a
+<code>DeprecationWarning</code> because the old <code>agent-os-kernel</code> distribution is deprecated.
+Use <code>agent-governance-toolkit-core</code> (or the <code>[full]</code> extra that includes it) as
+the replacement distribution. Policy-engine host code uses the ACS SDK;
+<code>agt-policies</code> provides the one-way v4-to-v5 migration command. The pre-ACS
+<code>agent_os.policies</code> rule model is gone, and <code>BREAKING_CHANGES.md</code> lists its
+replacements.</p>
+<p>The policy engine is published upstream as
+<a href="https://github.com/responsibleai/agent-control-spec"><code>agent-control-spec</code></a>.
+<a href="https://github.com/responsibleai/agent-hooks"><code>agent-hooks</code></a> defines its
+interception contract. AGT retains the <code>AgentControl</code> host APIs and framework
+adapters in <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/policy-engine/"><code>policy-engine/</code></a>, not a second decision engine.
+This keeps policy evaluation in one place. AGT can adopt upstream fixes through
+a dependency update while keeping its host APIs and framework integrations.
+See the <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/packages/agent-control-specification.md">ACS package guide</a> for
+the distinction between upstream packages and AGT's compatibility SDKs.</p>
+<p>For Claude Code, add AGT as a plugin marketplace and install the governance plugin:</p>
+<pre><code class="language-text">/plugin marketplace add microsoft/agent-governance-toolkit
+/plugin install agt-governance@agent-governance-toolkit
+</code></pre>
+<p>Govern any tool function in two lines:</p>
+<pre><code class="language-python">from agentmesh.governance import govern
+
+safe_tool = govern(my_tool, policy="policy.yaml")   # every call checked, logged, enforced
+</code></pre>
+<p>On every call, <code>safe_tool</code> evaluates the YAML policy, logs the decision to an
+audit trail, and raises <code>GovernanceDenied</code> when the policy blocks the action.</p>
+<pre><code class="language-yaml"># policy.yaml
+apiVersion: governance.toolkit/v1
+name: production-policy
+default_action: allow
+rules:
+  - name: block-destructive
+    condition: "action.type in ['drop', 'delete', 'truncate']"
+    action: deny
+    description: "Destructive operations require human approval"
+
+  - name: require-approval-for-send
+    condition: "action.type == 'send_email'"
+    action: require_approval
+    approvers: ["security-team"]
+</code></pre>
+<pre><code class="language-python">&gt;&gt;&gt; safe_tool(action="read", table="users")
+{'table': 'users', 'rows': 42}
+
+&gt;&gt;&gt; safe_tool(action="drop", table="users")
+GovernanceDenied: Action denied by policy rule 'block-destructive':
+  Destructive operations require human approval
+</code></pre>
+<p>Or use the full <code>AgentControl</code> API for programmatic control:</p>
+<details>
+<summary><b>AgentControl example</b></summary>
+<pre><code class="language-python">from agent_control_specification import AgentControl
+
+runtime = AgentControl.from_path(str("manifest.yaml"))
+result = runtime.evaluate(
+    "input",
+    {
+        "envelope": {"agent_id": "example-agent"},
+        "input": {"body": {"action": "web_search", "params": {}}},
+    },
+)
+print(result.verdict)
+runtime.close()
+</code></pre>
+
+
+[Run the complete ACS email-tool example](examples/acs-email-tool).
+
+</details>
+<details>
+<summary><b>TypeScript / .NET / Rust / Go examples</b></summary>
+
+**TypeScript**
+
+<pre><code class="language-typescript">import { PolicyEngine } from "@microsoft/agent-governance-sdk";
+
+const engine = new PolicyEngine([
+  { action: "web_search", effect: "allow" },
+  { action: "shell_exec", effect: "deny" },
+]);
+engine.evaluate("web_search"); // "allow"
+engine.evaluate("shell_exec"); // "deny"
+</code></pre>
+
+
+**.NET**
+
+<pre><code class="language-csharp">using AgentGovernance;
+using AgentGovernance.Extensions.ModelContextProtocol;
+using AgentGovernance.Policy;
+
+var kernel = new GovernanceKernel(new GovernanceOptions
+{
+    PolicyPaths = new() { "policies/default.yaml" },
+});
+var result = kernel.EvaluateToolCall("did:mesh:agent-1", "web_search",
+    new() { ["query"] = "latest AI news" });
+
+// MCP server integration
+builder.Services.AddMcpServer()
+    .WithGovernance(options =&gt; options.PolicyPaths.Add("policies/mcp.yaml"));
+</code></pre>
+
+
+**Rust**
+
+<pre><code class="language-rust">use agent_governance::{AgentMeshClient, ClientOptions};
+
+let client = AgentMeshClient::new("my-agent").unwrap();
+let result = client.execute_with_governance("data.read", None);
+assert!(result.allowed);
+</code></pre>
+
+
+**Go**
+
+<pre><code class="language-go">import agentmesh "github.com/microsoft/agent-governance-toolkit/agent-governance-golang"
+
+client, _ := agentmesh.NewClient("my-agent",
+    agentmesh.WithPolicyRules([]agentmesh.PolicyRule{
+        {Action: "data.read", Effect: agentmesh.Allow},
+        {Action: "*", Effect: agentmesh.Deny},
+    }),
+)
+result := client.ExecuteWithGovernance("data.read", nil)
+</code></pre>
+</details>
+<p>CLI tools:</p>
+<pre><code class="language-bash">agt doctor                                        # check installation
+agt verify                                        # OWASP compliance check
+agt verify --evidence ./agt-evidence.json --strict # fail CI on weak evidence
+agt red-team scan ./prompts/ --min-grade B         # prompt injection audit
+agt lint-policy policies/                          # validate policy files
+</code></pre>
+<p>Full walkthrough: <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/quickstart.md">quickstart.md</a> -- zero to governed agents in 5 minutes.
+🌍 Also in: <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/i18n/quickstart.es.md">Español</a> | <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/i18n/quickstart.ja.md">日本語</a> | <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/i18n/quickstart.zh-CN.md">简体中文</a> | <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/i18n/quickstart.ko.md">한국어</a></p>
+<hr/>
+<h2 id="how-it-works">How It Works</h2>
+<pre><code>Agent ──► Policy Engine ──► Identity ──► Audit Log
+            (YAML/OPA/Cedar)  (SPIFFE/DID/mTLS)  (Tamper-evident)
+                 │                                      │
+                 ├── Allowed ──► Tool executes           │
+                 └── Denied  ──► GovernanceDenied        │
+                                                        ▼
+                                                 Decision Record
+</code></pre>
+<p>Every layer is optional. Start with <code>govern()</code> and add layers as your risk profile grows. Most teams run policy enforcement + audit logging and never need the full stack.</p>
+<hr/>
+<h2 id="packages">Packages</h2>
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-python/agent-os/"><strong>Agent OS</strong></a></td>
+<td>Policy engine, agent lifecycle, governance gate</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/policy-engine/"><strong>Agent Control Specification</strong></a> (<a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/policy-engine/README.md">README</a>)</td>
+<td>Stateless, deterministic, fail-closed policy decision runtime (Rust core) backing the AGT policy layer</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-python/agent-mesh/"><strong>Agent Mesh</strong></a></td>
+<td>Agent discovery, routing, and trust mesh</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-python/agent-runtime/"><strong>Agent Runtime</strong></a></td>
+<td>Execution sandboxing with four privilege rings</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-python/agent-sre/"><strong>Agent SRE</strong></a></td>
+<td>Kill switch, SLO monitoring, chaos testing</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-python/agent-compliance/"><strong>Agent Compliance</strong></a></td>
+<td>OWASP verification, policy linting, integrity checks</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-python/agent-marketplace/"><strong>Agent Marketplace</strong></a></td>
+<td>Plugin governance and trust scoring</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-python/agent-lightning/"><strong>Agent Lightning</strong></a></td>
+<td>RL training governance with violation penalties</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-python/agent-hypervisor/"><strong>Agent Hypervisor</strong></a></td>
+<td>Execution audit, delta engine, in-memory commitment tracking, command denylist enforcement</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="additional-capabilities">Additional Capabilities</h3>
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MCP Security Gateway</strong></td>
+<td>Tool poisoning detection, drift monitoring, typosquatting, hidden instruction scanning (<a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/specs/MCP-SECURITY-GATEWAY-1.0.md">Spec</a>)</td>
+</tr>
+<tr>
+<td><strong>Shadow AI Discovery</strong></td>
+<td>Find unregistered agents across processes, configs, and repos (<a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-python/agent-discovery/">Discovery</a>)</td>
+</tr>
+<tr>
+<td><strong>Governance Dashboard</strong></td>
+<td>Real-time fleet visibility for health, trust, and compliance (<a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/examples/demos/governance-dashboard/">Dashboard</a>)</td>
+</tr>
+<tr>
+<td><strong>PromptDefense Evaluator</strong></td>
+<td>12-vector prompt injection audit (<a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-python/agent-compliance/src/agent_compliance/prompt_defense.py">Evaluator</a>)</td>
+</tr>
+<tr>
+<td><strong>Contributor Reputation</strong></td>
+<td>PR/issue author screening for social engineering. Reusable GitHub Action (<a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/.github/actions/contributor-check/">Action</a>)</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="install">Install</h2>
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Package</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Python</strong></td>
+<td><a href="https://pypi.org/project/agent-governance-toolkit/"><code>agent-governance-toolkit</code></a></td>
+<td><code>pip install "agent-governance-toolkit[full]"</code></td>
+</tr>
+<tr>
+<td><strong>TypeScript</strong></td>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-typescript/"><code>@microsoft/agent-governance-sdk</code></a></td>
+<td><code>npm install @microsoft/agent-governance-sdk</code></td>
+</tr>
+<tr>
+<td><strong>Copilot CLI</strong></td>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-copilot-cli/"><code>@microsoft/agent-governance-copilot-cli</code></a></td>
+<td><code>npx @microsoft/agent-governance-copilot-cli install</code></td>
+</tr>
+<tr>
+<td><strong>Claude Code</strong></td>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-claude-code/"><code>@microsoft/agent-governance-claude-code</code></a></td>
+<td><code>claude --plugin-dir ./agent-governance-claude-code</code></td>
+</tr>
+<tr>
+<td><strong>Codex CLI</strong></td>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-codex-cli/"><code>@microsoft/agent-governance-codex-cli</code></a></td>
+<td><code>node agent-governance-codex-cli/bin/agt-codex.mjs install</code></td>
+</tr>
+<tr>
+<td><strong>OpenCode</strong></td>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-opencode/"><code>@microsoft/agent-governance-opencode</code></a></td>
+<td><code>npm install @microsoft/agent-governance-opencode</code></td>
+</tr>
+<tr>
+<td><strong>.NET</strong></td>
+<td><a href="https://www.nuget.org/packages/Microsoft.AgentGovernance"><code>Microsoft.AgentGovernance</code></a></td>
+<td><code>dotnet add package Microsoft.AgentGovernance</code></td>
+</tr>
+<tr>
+<td><strong>.NET MCP</strong></td>
+<td><code>Microsoft.AgentGovernance.Extensions.ModelContextProtocol</code></td>
+<td><code>dotnet add package Microsoft.AgentGovernance.Extensions.ModelContextProtocol</code></td>
+</tr>
+<tr>
+<td><strong>Rust</strong></td>
+<td><a href="https://crates.io/crates/agent-governance"><code>agent-governance</code></a></td>
+<td><code>cargo add agent-governance</code></td>
+</tr>
+<tr>
+<td><strong>Go</strong></td>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-golang/"><code>agent-governance-toolkit</code></a></td>
+<td><code>go get github.com/microsoft/agent-governance-toolkit/agent-governance-golang</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>All five language SDKs implement core governance (policy, identity, trust, audit). Python has the full stack. Copilot CLI and Claude Code are first-party developer surfaces built on the TypeScript SDK.
+See <strong><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/PACKAGE-FEATURE-MATRIX.md">Language Package Matrix</a></strong> for detailed per-language coverage.</p>
+<details>
+<summary><b>Python distributions (v4.1.0 — consolidated)</b></summary>
+
+As of v4.1.0, 45 packages have been consolidated into 5 top-level distributions:
+
+| Distribution | PyPI | What's included |
+|--------------|------|-----------------|
+| `agent-governance-toolkit-core` | [`agent-governance-toolkit-core`](https://pypi.org/project/agent-governance-toolkit-core/) | Policy engine, capability model, audit, MCP gateway, zero-trust identity, trust scoring, A2A/MCP/IATP bridges |
+| `agent-governance-toolkit-runtime` | [`agent-governance-toolkit-runtime`](https://pypi.org/project/agent-governance-toolkit-runtime/) | Privilege rings, saga orchestration, termination control, execution plan validation, command denylist enforcement |
+| `agent-governance-toolkit-sre` | [`agent-governance-toolkit-sre`](https://pypi.org/project/agent-governance-toolkit-sre/) | SLOs, error budgets, chaos engineering, circuit breakers |
+| `agent-governance-toolkit-cli` | [`agent-governance-toolkit-cli`](https://pypi.org/project/agent-governance-toolkit-cli/) | `agt` CLI, OWASP verification, integrity checks, policy linting |
+| `agent-governance-toolkit[full]` | [`agent-governance-toolkit`](https://pypi.org/project/agent-governance-toolkit/) | Meta-package installing all of the above |
+
+Previous package names (`agent-os-kernel`, `agentmesh-platform`, `agentmesh-runtime`, `agent-sre`, `agent-discovery`, `agent-hypervisor`, `agentmesh-marketplace`, `agentmesh-lightning`) remain installable as stub packages that redirect to the consolidated distributions.
+
+</details>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li><strong>Python</strong>: 3.10+</li>
+<li><strong>Node.js</strong>: 18+ / npm 9+ (TypeScript SDK)</li>
+<li><strong>.NET</strong>: 8+</li>
+<li><strong>Go</strong>: 1.25+</li>
+<li><strong>Rust</strong>: 1.70+</li>
+<li><strong>Optional</strong>: <code>AZURE_CLIENT_ID</code>, <code>AZURE_TENANT_ID</code>, <code>AZURE_CLIENT_SECRET</code> for Azure-integrated features</li>
+</ul>
+<hr/>
+<h2 id="framework-support">Framework Support</h2>
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Integration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/microsoft/agent-framework"><strong>Microsoft Agent Framework</strong></a></td>
+<td>Native Middleware</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/semantic-kernel"><strong>Semantic Kernel</strong></a></td>
+<td>Native (.NET + Python)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/autogen">AutoGen</a></td>
+<td>Adapter</td>
+</tr>
+<tr>
+<td><a href="https://github.com/langchain-ai/langgraph">LangGraph</a> / <a href="https://github.com/langchain-ai/langchain">LangChain</a></td>
+<td>Adapter</td>
+</tr>
+<tr>
+<td><a href="https://github.com/crewAIInc/crewAI">CrewAI</a></td>
+<td>Adapter</td>
+</tr>
+<tr>
+<td><a href="https://github.com/openai/openai-agents-python">OpenAI Agents SDK</a></td>
+<td>Middleware</td>
+</tr>
+<tr>
+<td>Claude Code</td>
+<td>Governance plugin package</td>
+</tr>
+<tr>
+<td><a href="https://github.com/google/adk-python">Google ADK</a></td>
+<td>Adapter</td>
+</tr>
+<tr>
+<td><a href="https://github.com/run-llama/llama_index">LlamaIndex</a></td>
+<td>Middleware</td>
+</tr>
+<tr>
+<td><a href="https://github.com/deepset-ai/haystack">Haystack</a></td>
+<td>Pipeline</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mastra-ai/mastra">Mastra</a></td>
+<td>Adapter</td>
+</tr>
+<tr>
+<td><a href="https://github.com/langgenius/dify">Dify</a></td>
+<td>Plugin</td>
+</tr>
+<tr>
+<td><a href="https://learn.microsoft.com/azure/ai-studio/">Azure AI Foundry</a></td>
+<td>Deployment Guide</td>
+</tr>
+<tr>
+<td>GitHub Copilot CLI</td>
+<td>Governance installer</td>
+</tr>
+</tbody>
+</table></div>
+<p>Full list: <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-python/agentmesh-integrations/">Framework Integrations</a> · <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/examples/quickstart/">Quickstart Examples</a></p>
+<hr/>
+<h2 id="examples">Examples</h2>
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Example</th>
+<th>Framework</th>
+<th>What it demonstrates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/examples/acs-email-tool">acs-email-tool</a></td>
+<td>Framework-neutral ACS host</td>
+<td>Snapshot, verdict, transform, deny, and host enforcement</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/examples/acs-atr-annotator">acs-atr-annotator</a></td>
+<td>ACS custom policy</td>
+<td>Independent threat-rule annotations with fail-closed decisions</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/examples/openai-agents-governed">openai-agents-governed</a></td>
+<td>OpenAI Agents SDK</td>
+<td>Policy-gated tool calls with trust tiers</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/examples/crewai-governed">crewai-governed</a></td>
+<td>CrewAI</td>
+<td>Multi-agent governance with role-based policies</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/examples/smolagents-governed">smolagents-governed</a></td>
+<td>HuggingFace smolagents</td>
+<td>Lightweight agent governance</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/examples/maf-integration">maf-integration</a></td>
+<td>MAF</td>
+<td>Microsoft Agent Framework integration</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/examples/mcp-trust-verified-server">mcp-trust-verified-server</a></td>
+<td>MCP</td>
+<td>Trust-verified MCP server implementation</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/examples/demos/governance-dashboard">governance-dashboard</a></td>
+<td>Streamlit</td>
+<td>Real-time fleet visibility dashboard</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/examples/k8s-agent-sandbox-governed">k8s-agent-sandbox-governed</a></td>
+<td>kubernetes-sigs/agent-sandbox</td>
+<td>Pre-dispatch command policy on top of Kubernetes-native execution isolation</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="specifications">Specifications</h2>
+<p>Every major component has a formal RFC 2119 specification with conformance tests. These specs define the behavioral contract: what implementations MUST, SHOULD, and MAY do.</p>
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Scope</th>
+<th>Tests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/specs/AGENT-OS-POLICY-ENGINE-1.0.md">Agent OS Policy Engine</a></td>
+<td>Native runtime integration and fail-closed semantics</td>
+<td>--</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/policy-engine/spec/SPECIFICATION.md">Agent Control Specification</a></td>
+<td>Stateless intervention-point policy runtime, verdicts, transform, fail-closed</td>
+<td>--</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/specs/AGENTMESH-IDENTITY-TRUST-1.0.md">AgentMesh Identity and Trust</a></td>
+<td>Credentials, trust scoring, delegation chains</td>
+<td>135</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/specs/AGENT-HYPERVISOR-EXECUTION-CONTROL-1.0.md">Agent Hypervisor Execution Control</a></td>
+<td>Privilege rings, saga orchestration, kill switch</td>
+<td>80</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/specs/AGENTMESH-TRUST-COORDINATION-1.0.md">AgentMesh Trust and Coordination</a></td>
+<td>Peer trust negotiation, mesh-wide policy</td>
+<td>62</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/specs/AGENT-SRE-GOVERNANCE-1.0.md">Agent SRE Governance</a></td>
+<td>SLOs, error budgets, chaos, circuit breakers</td>
+<td>111</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/specs/MCP-SECURITY-GATEWAY-1.0.md">MCP Security Gateway</a></td>
+<td>Tool poisoning, drift detection, hidden instructions</td>
+<td>127</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/specs/AGENT-LIGHTNING-FAST-PATH-1.0.md">Agent Lightning Fast-Path</a></td>
+<td>RL training governance, violation penalties</td>
+<td>100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/specs/FRAMEWORK-ADAPTER-CONTRACT-1.0.md">Framework Adapter Contract</a></td>
+<td>Native framework mediation contract</td>
+<td>--</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/specs/AUDIT-COMPLIANCE-1.0.md">Audit and Compliance</a></td>
+<td>Merkle audit, compliance mapping, Decision BOM</td>
+<td>157</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/specs/AGENTMESH-WIRE-1.0.md">AgentMesh Wire Protocol</a></td>
+<td>Message format, routing, serialization</td>
+<td>--</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>992 conformance tests</strong> ensure code stays aligned to specs. <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/adr/">29 Architecture Decision Records</a> document why.</p>
+<hr/>
+<h2 id="standards-compliance">Standards Compliance</h2>
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Standard</th>
+<th>Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/compliance/owasp-agentic-top10-architecture.md">OWASP Agentic AI Top 10</a></td>
+<td>All ASI risk categories mapped with deterministic controls</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/compliance/nist-ai-rmf-alignment.md">NIST AI RMF 1.0</a></td>
+<td>Full GOVERN, MAP, MEASURE, MANAGE alignment</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/compliance/">EU AI Act</a></td>
+<td>Compliance mapping with automated evidence</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/compliance/soc2-mapping.md">SOC 2</a></td>
+<td>Control mapping with audit trail export</td>
+</tr>
+<tr>
+<td><a href="https://aarm.dev/builders/agent-governance-toolkit-microsoft">AARM Extended</a></td>
+<td>All R1–R9 requirements satisfied; verified Jun 14, 2026</td>
+</tr>
+<tr>
+<td><a href="https://agentictrustframework.ai/ecosystem">ATF</a></td>
+<td>All five elements mapped: Agent Mesh (identity), Agent OS (policy), Agent Compliance (governance), Agent Runtime (sandboxing), Agent SRE (incident response)</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="security">Security</h2>
+<p>AGT enforces governance at the application middleware layer, not at the OS kernel level. The policy engine and agents share the same process boundary.</p>
+<p><strong>Production recommendation:</strong> Run each agent in a separate container for OS-level isolation. See <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/ARCHITECTURE.md">Architecture: Security Boundaries</a>.</p>
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CodeQL</td>
+<td>Python + TypeScript SAST</td>
+</tr>
+<tr>
+<td>Gitleaks</td>
+<td>Secret scanning on PR/push/weekly</td>
+</tr>
+<tr>
+<td>ClusterFuzzLite</td>
+<td>7 fuzz targets (policy, injection, MCP, sandbox, trust)</td>
+</tr>
+<tr>
+<td>Dependabot</td>
+<td>13 ecosystems</td>
+</tr>
+<tr>
+<td>OpenSSF Scorecard</td>
+<td>Weekly scoring + SARIF upload</td>
+</tr>
+</tbody>
+</table></div>
+<p>See <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/LIMITATIONS.md">Known Limitations</a> for honest design boundaries and recommended layered defense.</p>
+<hr/>
+<h2 id="documentation">Documentation</h2>
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Getting Started</strong></td>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/quickstart.md">Quick Start</a> · <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/tutorials/">Tutorials</a> (60+) · <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/FAQ.md">FAQ</a></td>
+</tr>
+<tr>
+<td><strong>Architecture</strong></td>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/ARCHITECTURE.md">System Design</a> · <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/security/threat-model.md">Threat Model</a> · <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/adr/">ADRs</a> (29)</td>
+</tr>
+<tr>
+<td><strong>Specifications</strong></td>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/specs/">All Specs</a> (10 formal specs, 992 conformance tests)</td>
+</tr>
+<tr>
+<td><strong>API Reference</strong></td>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-python/agent-os/README.md">Agent OS</a> · <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-python/agent-mesh/README.md">AgentMesh</a> · <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-python/agent-sre/README.md">Agent SRE</a></td>
+</tr>
+<tr>
+<td><strong>Compliance</strong></td>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/compliance/owasp-agentic-top10-architecture.md">OWASP</a> · <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/compliance/">EU AI Act</a> · <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/compliance/nist-ai-rmf-alignment.md">NIST AI RMF</a> · <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/compliance/soc2-mapping.md">SOC 2</a> · <a href="https://aarm.dev/builders/agent-governance-toolkit-microsoft">AARM Extended</a> · <a href="https://agentictrustframework.ai/ecosystem">ATF</a></td>
+</tr>
+<tr>
+<td><strong>Deployment</strong></td>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/deployment/README.md">Azure</a> · <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/deployment/README.md">AWS</a> · <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/deployment/README.md">GCP</a> · <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/deployment/README.md">Docker Compose</a></td>
+</tr>
+<tr>
+<td><strong>Extensions</strong></td>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-typescript/agent-os-vscode/">VS Code</a> · <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/agent-governance-python/agentmesh-integrations/">Framework Integrations</a></td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="contributing">Contributing</h2>
+<p><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/CONTRIBUTING.md">Contributing Guide</a> · <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/COMMUNITY.md">Community</a> · <a href="https://discord.gg/TxMRqY3pFr">Discord</a> · <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/SECURITY.md">Security Policy</a> · <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/CHANGELOG.md">Changelog</a></p>
+<p><strong>Using AGT?</strong> Add your organization to <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/ADOPTERS.md">ADOPTERS.md</a>.</p>
+<h2 id="governance">Governance</h2>
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/GOVERNANCE.md">GOVERNANCE.md</a></td>
+<td>Decision-making, roles, contributor ladder</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/CHARTER.md">CHARTER.md</a></td>
+<td>Technical charter (LF Projects format)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/MAINTAINERS.md">MAINTAINERS.md</a></td>
+<td>Maintainers and organizations</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/SECURITY.md">SECURITY.md</a></td>
+<td>Vulnerability reporting and response SLAs</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/CODE_OF_CONDUCT.md">CODE_OF_CONDUCT.md</a></td>
+<td>Microsoft Open Source Code of Conduct</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/ANTITRUST.md">ANTITRUST.md</a></td>
+<td>Competition law guidelines for participants</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/TRADEMARKS.md">TRADEMARKS.md</a></td>
+<td>Trademark usage policy</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="important-notes">Important Notes</h2>
+<p>If you use the Agent Governance Toolkit to build applications that operate with third-party agent frameworks or services, you do so at your own risk. We recommend reviewing all data being shared with third-party services and being cognizant of third-party practices for retention and location of data.</p>
+<h2 id="official-sources">Official Sources</h2>
+<p>The only official sources for the Agent Governance Toolkit are:</p>
+<div aria-label="Source table; scroll horizontally" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Source code</strong></td>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a></td>
+</tr>
+<tr>
+<td><strong>Documentation</strong></td>
+<td><a href="https://microsoft.github.io/agent-governance-toolkit/">microsoft.github.io/agent-governance-toolkit</a></td>
+</tr>
+<tr>
+<td><strong>Python packages</strong></td>
+<td><code>https://pypi.org/user/agentgovtoolkit/</code></td>
+</tr>
+<tr>
+<td><strong>npm packages</strong></td>
+<td><code>@microsoft/agent-governance-sdk</code> on <a href="https://www.npmjs.com/">npmjs.com</a></td>
+</tr>
+<tr>
+<td><strong>NuGet packages</strong></td>
+<td><code>Microsoft.AgentGovernance.*</code> on <a href="https://www.nuget.org/">nuget.org</a></td>
+</tr>
+<tr>
+<td><strong>Rust crates</strong></td>
+<td><code>agent-governance</code>, <code>agent-governance-mcp</code> on <a href="https://crates.io/">crates.io</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>The project team does not maintain or endorse any third-party websites,
+packages, or documentation sites claiming to be official. If you encounter a
+suspicious site or package using the Agent Governance Toolkit name, please
+report it through the channels described in <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/SECURITY.md">SECURITY.md</a>.</p>
+<h2 id="license">License</h2>
+<p>This project is licensed under the <a href="https://github.com/microsoft/agent-governance-toolkit/blob/main/LICENSE">MIT License</a>.</p>
+<h2 id="trademarks">Trademarks</h2>
+<p>This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
+<a href="https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general">Microsoft's Trademark &amp; Brand Guidelines</a>.
+Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
+Any use of third-party trademarks or logos are subject to those third-party's policies.</p></section>
+      </article>
+      <nav class="article-nav" aria-label="Reading order"><a href="agentgateway.html"><span class="eyebrow">Previous</span><span>Agentgateway</span></a><a href="zt-mcp-implementation.html"><span class="eyebrow">Next</span><span>ZT-MCP</span></a></nav>
+      <a class="back-link" href="#main">Back to top ↑</a>
+    </main>
+  <footer class="site-footer"><a href="../index.html">Zero Trust MCP Gateway</a><span>Reading collection · 27 October 2026</span></footer>
+</body>
+</html>
