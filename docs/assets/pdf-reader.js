@@ -136,4 +136,6 @@
     render();
   }));
   status.textContent = "Load the original pages, then use page and zoom controls to inspect diagrams and formulas.";
+  // A visitor may follow the anchor before the deferred renderer finishes loading.
+  if (location.hash === "#paper-viewer") start();
 })();
