@@ -6,7 +6,7 @@ This repository currently contains the research library; the gateway implementat
 
 ## Reading on an iPhone
 
-Read the published library in Safari or any browser: [Zero Trust MCP Gateway reading library](https://kolygri.github.io/zero-trust-mcp-gateway-reading/).
+Read the published library in Safari or any browser: [Zero Trust MCP Gateway reading library](https://zero-trust-mcp-reading.k-l-grigorov.chatgpt.site/).
 
 Open the [HTML reading library](docs/index.html) in a browser. It includes one page per resource, large adjustable text, a single-column layout, dark mode, and previous/next navigation. No build tools, account or JavaScript are required to read the pages.
 
@@ -24,9 +24,9 @@ In iPhone Safari, open `http://<your-Mac-local-IP>:8000`. The files in `docs` ar
 
 ## Published website
 
-The public [reading-site repository](https://github.com/kolygri/zero-trust-mcp-gateway-reading) contains a snapshot of `docs/`. GitHub Pages serves its `main` branch from the repository root. The gateway project repository remains private. The `.nojekyll` file publishes the HTML, PDF and JavaScript assets directly.
+The reading library is hosted separately with Sites at the address above. Its deployment checkout is `~/Git/zero-trust-mcp-gateway-site`, serving the `dist/` directory. The [GitHub reading snapshot](https://github.com/kolygri/zero-trust-mcp-gateway-reading) retains the reading files, with GitHub Pages disabled. The gateway project repository remains private. Access to the new hosted site is private to the owner by default.
 
-To update the website, rebuild the library here, copy the contents of `docs/` into the reading-site checkout, then commit and push that repository's `main` branch. Publishing the snapshot is a separate step from pushing this source repository.
+To update the hosted library, rebuild it here, copy `docs/` into the separate Site checkout’s `dist/`, then publish through the Sites workflow using its existing `.openai/hosting.json` identity. Keep GitHub Pages disabled. Never modify or publish to `kolygri.github.io`, including project subpaths, without asking the user and receiving explicit approval; see `AGENTS.md`.
 
 ## 1. The research most relevant to the gateway
 
