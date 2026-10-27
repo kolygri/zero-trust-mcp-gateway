@@ -6,6 +6,8 @@ This repository currently contains the research library; the gateway implementat
 
 ## Reading on an iPhone
 
+Read the published library in Safari or any browser: [Zero Trust MCP Gateway reading library](https://kolygri.github.io/zero-trust-mcp-gateway-reading/).
+
 Open the [HTML reading library](docs/index.html) in a browser. It includes one page per resource, large adjustable text, a single-column layout, dark mode, and previous/next navigation. No build tools, account or JavaScript are required to read the pages.
 
 The supplied research notes are preserved as written; the added Policies on Paths entry is a source-based summary. Where redistribution permission is established and source text is available, the reader also includes the original text with attribution. Each paper has an original-PDF viewer with page selection, zoom and panning, so diagrams, formulas and tables keep their published layout. MathML formulas in HTML copies retain mathematical structure and scroll independently when wider than the screen. GitHub's file view shows HTML source rather than rendering the reader.
@@ -18,7 +20,13 @@ To read on an iPhone over the same trusted Wi-Fi network, start a local server f
 python3 -m http.server 8000 --bind 0.0.0.0 --directory docs
 ```
 
-In iPhone Safari, open `http://<your-Mac-local-IP>:8000`. The files in `docs` are served to devices that can reach your Mac; stop the server with Ctrl-C when finished. Alternatively, copy the entire `docs` folder to a static host you control. This repository does not automatically publish it.
+In iPhone Safari, open `http://<your-Mac-local-IP>:8000`. The files in `docs` are served to devices that can reach your Mac; stop the server with Ctrl-C when finished.
+
+## Published website
+
+The public [reading-site repository](https://github.com/kolygri/zero-trust-mcp-gateway-reading) contains a snapshot of `docs/`. GitHub Pages serves its `main` branch from the repository root. The gateway project repository remains private. The `.nojekyll` file publishes the HTML, PDF and JavaScript assets directly.
+
+To update the website, rebuild the library here, copy the contents of `docs/` into the reading-site checkout, then commit and push that repository's `main` branch. Publishing the snapshot is a separate step from pushing this source repository.
 
 ## 1. The research most relevant to the gateway
 
