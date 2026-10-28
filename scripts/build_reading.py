@@ -203,7 +203,7 @@ def build_readme():
     lines = [
         "# Zero Trust MCP Gateway", "",
         "Research and practical references for a zero-trust MCP gateway that enforces security policies at tool boundaries and coordinates corrective interventions throughout agent execution.", "",
-        "This repository currently contains the research library; the gateway implementation has not started.", "",
+        "This repository contains the research library and a minimal Go MCP gateway that forwards stdio messages unchanged and logs traffic in both directions. See [Running the gateway](GATEWAY.md) for build commands and MCP client configuration.", "",
         "## Reading on an iPhone", "",
         "Read the published library in Safari or any browser: [Zero Trust MCP Gateway reading library](https://zero-trust-mcp-reading.k-l-grigorov.chatgpt.site/).", "",
         "Open the [HTML reading library](docs/index.html) in a browser. It includes one page per resource, large adjustable text, a single-column layout, dark mode, and previous/next navigation. No build tools, account or JavaScript are required to read the pages.", "",

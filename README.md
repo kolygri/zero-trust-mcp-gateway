@@ -2,7 +2,7 @@
 
 Research and practical references for a zero-trust MCP gateway that enforces security policies at tool boundaries and coordinates corrective interventions throughout agent execution.
 
-This repository currently contains the research library; the gateway implementation has not started.
+This repository contains the research library and a minimal Go MCP gateway that forwards stdio messages unchanged and logs traffic in both directions. See [Running the gateway](GATEWAY.md) for build commands and MCP client configuration.
 
 ## Reading on an iPhone
 
