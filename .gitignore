@@ -1,0 +1,12 @@
+.local/
+bin/
+*.db
+*.db-shm
+*.db-wal
+*.env
+*.key
+coverage.out
+.DS_Store
+__pycache__/
+*.pyc
+.gateway/
