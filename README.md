@@ -103,6 +103,10 @@ The release implements the core local mediation, state, approval and recovery pa
 
 PostgreSQL/replicated coordination, protected value lineage, resource fencing for real services, independently anchored audit checkpoints, remote revocation distribution, sandbox lifecycle management, an identity-provider adapter and independent domain reconciliation are future work. Policy updates currently require a controlled restart; no hot reload or immediate remote revocation guarantee is claimed. See the design documents before adapting the reference to sensitive data.
 
+## Diagnostic stdio relay
+
+The existing `cmd/mcp-gateway` executable is preserved as a transparent logging relay; see [GATEWAY.md](GATEWAY.md). It forwards bytes unchanged and logs full payloads. Use `cmd/gateway` for the enforcing HTTP boundary described here. The diagnostic relay is outside that security boundary and must not provide a bypass to protected resources.
+
 ## Research library and licence
 
 The original reading collection is preserved in [RESEARCH.md](RESEARCH.md) and [docs/](docs/). Its separate [Sites reading address](https://zero-trust-mcp-reading.k-l-grigorov.chatgpt.site/) is unchanged. Building or running the gateway does not deploy a website or enable GitHub Pages.

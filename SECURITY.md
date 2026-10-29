@@ -18,3 +18,5 @@ Include the commit, Go version, policy semantics and bundle digest, supported tr
 - Approvers are trusted independent actors. Authentication, entitlement and a structured display do not guarantee that a human makes the correct decision.
 
 The application fails closed on missing/stale policy, storage errors, unsupported features, classifier/schema failure, and uncertain execution. Availability and correctness of policy are part of the deployment's trusted computing base.
+
+The diagnostic `cmd/mcp-gateway` stdio relay is preserved for logging only. It does not perform these enforcement checks and logs complete payloads. Do not grant it a bypass route to a resource protected by `cmd/gateway`.
