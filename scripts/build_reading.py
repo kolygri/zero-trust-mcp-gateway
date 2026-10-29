@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the README and static reader from checked-in sources. No dependencies."""
+"""Build the research index and static reader from checked-in sources. No dependencies."""
 
 import base64
 import html
@@ -203,7 +203,7 @@ def build_readme():
     lines = [
         "# Zero Trust MCP Gateway", "",
         "Research and practical references for a zero-trust MCP gateway that enforces security policies at tool boundaries and coordinates corrective interventions throughout agent execution.", "",
-        "This repository contains the research library and a minimal Go MCP gateway that forwards stdio messages unchanged and logs traffic in both directions. See [Running the gateway](GATEWAY.md) for build commands and MCP client configuration.", "",
+        "This file preserves the research library. See README.md for the gateway implementation and executable demo.", "",
         "## Reading on an iPhone", "",
         "Read the published library in Safari or any browser: [Zero Trust MCP Gateway reading library](https://zero-trust-mcp-reading.k-l-grigorov.chatgpt.site/).", "",
         "Open the [HTML reading library](docs/index.html) in a browser. It includes one page per resource, large adjustable text, a single-column layout, dark mode, and previous/next navigation. No build tools, account or JavaScript are required to read the pages.", "",
@@ -213,7 +213,7 @@ def build_readme():
         "```sh", "python3 -m http.server 8000 --bind 0.0.0.0 --directory docs", "```", "",
         "In iPhone Safari, open `http://<your-Mac-local-IP>:8000`. The files in `docs` are served to devices that can reach your Mac; stop the server with Ctrl-C when finished.", "",
         "## Published website", "",
-        "The reading library is hosted separately with Sites at the address above. Its deployment checkout is `~/Git/zero-trust-mcp-gateway-site`, serving the `dist/` directory. The [GitHub reading snapshot](https://github.com/kolygri/zero-trust-mcp-gateway-reading) retains the reading files, with GitHub Pages disabled. The gateway project repository remains private. Access to the new hosted site is private to the owner by default.", "",
+        "The reading library is hosted separately with Sites at the address above. Its deployment checkout is `~/Git/zero-trust-mcp-gateway-site`, serving the `dist/` directory. The [GitHub reading snapshot](https://github.com/kolygri/zero-trust-mcp-gateway-reading) retains the reading files, with GitHub Pages disabled. Access to the new hosted site is private to the owner by default.", "",
         "To update the hosted library, rebuild it here, copy `docs/` into the separate Site checkout’s `dist/`, then publish through the Sites workflow using its existing `.openai/hosting.json` identity. Keep GitHub Pages disabled. Never modify or publish to `kolygri.github.io`, including project subpaths, without asking the user and receiving explicit approval; see `AGENTS.md`.", "",
         "## 1. The research most relevant to the gateway", "",
         "Descriptions below preserve the supplied research notes, except the source-based summary of the newly added Policies on Paths paper. Relevance ratings are editorial judgements; reported results belong to each paper's evaluation, not this project.", "",
@@ -235,7 +235,7 @@ def build_readme():
             source = r["availability"].replace("The supplied notes are reproduced below. ", "")
         lines.append(f"| {r['title']} | {content} | {source} |")
     lines += ["", "Third-party source copies retain their upstream licences; inclusion does not imply endorsement. Original project READMEs are reading material, and their commands are not automatically executed. The PDF viewer uses a bundled copy of Mozilla PDF.js; its version, build instructions, and licence are in `docs/assets/vendor/pdfjs/README.md`.", "", "## Updating the library", "", "Edit `docs/resources.json` for the supplied notes and metadata. Licensed reading snapshots live in `docs/sources/`, with applicable licence notices in `docs/licenses/`. Unmodified licensed PDFs live in `docs/assets/papers/`; the build also creates classic-script data copies so the viewer works through `file://` without cross-origin fetches or workers. Rebuild the README and reading pages using Python's standard library:", "", "```sh", "python3 scripts/build_reading.py", "```", "", "The build uses checked-in snapshots and does not fetch or execute anything from upstream sources.", ""]
-    (ROOT / "README.md").write_text("\n".join(lines))
+    (ROOT / "RESEARCH.md").write_text("\n".join(lines))
 
 
 if __name__ == "__main__":
@@ -252,4 +252,4 @@ if __name__ == "__main__":
     for i, resource in enumerate(RESOURCES):
         build_resource(resource, i)
     build_readme()
-    print(f"Built README, index and {len(RESOURCES)} reading pages.")
+    print(f"Built RESEARCH.md, index and {len(RESOURCES)} reading pages.")

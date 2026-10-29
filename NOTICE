@@ -1,0 +1,7 @@
+Zero Trust MCP Gateway
+Copyright 2026 Konstantin Grigorov
+
+Original gateway source is licensed under Apache-2.0.
+Third-party research, PDFs and bundled PDF.js under docs/ retain their own
+copyright and licences. See RESEARCH.md, docs/licenses/ and
+docs/assets/vendor/pdfjs/LICENSE. The project licence does not relicense them.

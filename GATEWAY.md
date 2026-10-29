@@ -4,7 +4,7 @@ The gateway launches an MCP stdio server as a child process and relays its newli
 
 ## Build and test
 
-Requires Go 1.22 or newer. There are no external Go dependencies.
+The diagnostic relay package itself uses only the standard library. The repository now requires Go 1.27.3 or newer for the separate enforcing HTTP gateway. This relay performs no policy enforcement; see [README.md](README.md) for the security boundary.
 
 From the repository root:
 
@@ -62,4 +62,4 @@ Logs contain full payloads, including any credentials or private data present in
 
 The tests exercise an independent MCP fixture process through initialization, an initialized notification, tool listing, and a tool call, checking that logged messages match the actual traffic. They also cover large messages, exact byte preservation, write failures, child exit codes, and cancellation.
 
-The static research library remains available through the workflow in [README.md](README.md).
+The static research library remains available through the workflow in [RESEARCH.md](RESEARCH.md).
